@@ -1,6 +1,6 @@
 # MLB D1 Draft Predictor
 
-A baseball analytics project studying whether final-season NCAA Division I statistics, draft position, player position, and competition-related factors can predict whether a drafted college position player reaches Major League Baseball.
+Here we go, first ever project. This is a baseball analytics project studying whether final-season NCAA Division I statistics, draft position, player position, and competition-related factors can predict whether a drafted college position player reaches Major League Baseball.
 
 ## Project Goal
 

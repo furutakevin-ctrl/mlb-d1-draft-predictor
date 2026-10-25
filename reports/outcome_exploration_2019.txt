@@ -1,0 +1,67 @@
+2019 MLB OUTCOME EXPLORATION
+==============================
+
+Total players: 185
+MLB players by 2024: 45
+Overall MLB rate: 24.3%
+
+OUTCOMES BY DRAFT ROUND
+------------------------------
+draft_round  players  mlb_players mlb_rate average_PA median_OPS
+          1       15           11    73.3%      277.8      1.085
+         10       12            0     0.0%      251.0      0.989
+         11        6            2    33.3%      247.8      0.978
+         12        6            1    16.7%      252.2      0.884
+         13        8            0     0.0%      200.1      0.828
+         14        8            0     0.0%      272.0      0.875
+         15        6            0     0.0%      246.7      0.958
+         16        6            0     0.0%      253.2      0.914
+         17        8            0     0.0%      243.1      0.919
+         18        8            1    12.5%      260.4      0.850
+         19        6            1    16.7%      270.5      0.871
+          2       10            3    30.0%      277.0      0.932
+         20        9            0     0.0%      237.4      0.882
+          3        9            3    33.3%      254.1      1.017
+          4       11            5    45.5%      281.5      1.007
+          5        8            1    12.5%      263.2      0.975
+          6        8            2    25.0%      260.0      0.949
+          7       11            3    27.3%      268.0      0.924
+          8       12            3    25.0%      254.3      0.868
+          9       11            2    18.2%      265.7      0.887
+       CB-A        3            3   100.0%      258.0      1.094
+       CB-B        4            4   100.0%      256.2      0.923
+
+OUTCOMES BY POSITION FAMILY
+------------------------------
+position_family  players  mlb_players mlb_rate average_PA median_OPS
+              C       31            9    29.0%      244.2      0.890
+             DH        1            1   100.0%      306.0      1.064
+             IF       92           24    26.1%      264.2      0.960
+             OF       61           11    18.0%      256.2      0.900
+
+OUTCOMES BY OVERALL PICK BIN
+------------------------------
+pick_bin  players  mlb_players mlb_rate average_PA median_OPS
+    1-32       15           11    73.3%      277.8      1.085
+   33-64       11            4    36.4%      264.9      0.961
+  65-100       13            9    69.2%      261.4      0.966
+ 101-150       18            5    27.8%      275.0      1.000
+ 151-200       12            3    25.0%      262.6      0.957
+ 201-300       39            8    20.5%      259.7      0.902
+ 301-400       25            3    12.0%      238.4      0.899
+ 401-500       21            0     0.0%      254.7      0.884
+ 501-700       31            2     6.5%      251.2      0.882
+
+COLLEGE STATISTICS BY OUTCOME
+------------------------------
+ made_mlb_by_2024  players average_PA median_PA average_BA average_OBP average_SLG average_OPS average_HR average_BB average_SO average_SB
+                0      140      254.4     257.0      0.318       0.414       0.525       0.939        9.0       31.1       40.6        8.4
+                1       45      271.0     274.0      0.325       0.426       0.548       0.974       10.4       36.6       41.2        9.9
+
+PLAYERS WITH FEWER THAN 100 COLLEGE PA
+------------------------------
+  player_name position  overall_pick  college_PA  college_OPS  made_mlb_by_2024
+Zack Plunkett        C           611          72        0.931                 0
+ Chase Murray       OF           394          92        0.646                 0
+ Matt Fraizer       OF            95          94        1.017                 0
+ Jeremy Ydens       OF           243          99        0.797                 0

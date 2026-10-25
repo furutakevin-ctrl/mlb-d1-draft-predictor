@@ -1,0 +1,21 @@
+2019 BASELINE MODEL COMPARISON
+================================
+
+Players: 185
+Positive outcomes: 45
+Overall MLB rate: 24.3%
+
+Constant-probability baseline:
+Brier score: 0.1841
+
+Cross-validated model results:
+                   model  roc_auc  average_precision  brier_score  log_loss
+         draft_pick_only   0.8046             0.5791       0.1417    0.4432
+draft_pick_plus_position   0.7949             0.5763       0.1424    0.4488
+ draft_pick_plus_college   0.7708             0.4699       0.1557    0.4790
+
+Metric meanings:
+ROC-AUC: ranking quality; higher is better.
+Average precision: positive-class ranking; higher is better.
+Brier score: probability accuracy; lower is better.
+Log loss: probability penalty; lower is better.

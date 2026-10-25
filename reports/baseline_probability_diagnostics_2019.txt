@@ -1,0 +1,59 @@
+2019 BASELINE PROBABILITY DIAGNOSTICS
+========================================
+
+DRAFT_PICK_ONLY
+----------------------------------------
+ probability_quintile  players average_predicted_probability actual_mlb_rate
+                    1       37                          2.9%            5.4%
+                    2       37                          9.2%            8.1%
+                    3       37                         19.7%           16.2%
+                    4       37                         35.5%           27.0%
+                    5       37                         54.7%           64.9%
+
+DRAFT_PICK_PLUS_POSITION
+----------------------------------------
+ probability_quintile  players average_predicted_probability actual_mlb_rate
+                    1       37                          2.6%            5.4%
+                    2       37                          8.8%            8.1%
+                    3       37                         19.1%           16.2%
+                    4       37                         36.0%           32.4%
+                    5       37                         54.9%           59.5%
+
+DRAFT_PICK_PLUS_COLLEGE
+----------------------------------------
+ probability_quintile  players average_predicted_probability actual_mlb_rate
+                    1       37                          2.2%            5.4%
+                    2       37                          7.7%            8.1%
+                    3       37                         19.2%           16.2%
+                    4       37                         37.3%           43.2%
+                    5       37                         57.9%           48.6%
+
+
+HIGHEST DRAFT-PICK MODEL PROBABILITIES
+----------------------------------------
+    player_name  overall_pick position_family  made_mlb_by_2024 draft_pick_only
+      Josh Jung             8              IF                 1           62.7%
+    Will Wilson            15              IF                 0           61.7%
+     Greg Jones            22              IF                 1           60.5%
+Adley Rutschman             1               C                 1           60.4%
+     Kody Hoese            25              IF                 0           60.0%
+Shea Langeliers             9               C                 1           59.0%
+  Andrew Vaughn             3              IF                 1           58.9%
+  Michael Busch            31              IF                 1           58.9%
+  Hunter Bishop            10              OF                 0           58.8%
+    J.J. Bleday             4              OF                 1           58.8%
+
+
+LOWEST DRAFT-PICK MODEL PROBABILITIES
+----------------------------------------
+    player_name  overall_pick position_family  made_mlb_by_2024 draft_pick_only
+  Zack Plunkett           611               C                 0            1.2%
+Cameron Simmons           590              OF                 0            1.5%
+      Joe Davis           587              IF                 0            1.5%
+    Chris Givin           563              IF                 0            1.8%
+   Ashton McGee           553              IF                 0            2.0%
+      Jack Dunn           603              IF                 0            2.0%
+    Darius Hill           612              OF                 0            2.0%
+ Aaron Antonini           545               C                 0            2.1%
+   Thomas Rowan           591               C                 0            2.2%
+   Matt O'Neill           598               C                 0            2.2%

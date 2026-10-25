@@ -1,0 +1,121 @@
+
+Dataset overview
+----------------
+{'players': 185, 'unique_players': 185, 'draft_years': [2019]}
+
+Position counts
+---------------
+position
+SS    43
+C     31
+OF    27
+CF    22
+1B    18
+3B    17
+2B    13
+RF     7
+LF     5
+IF     1
+DH     1
+
+Draft round counts
+------------------
+draft_round
+1       15
+10      12
+11       6
+12       6
+13       8
+14       8
+15       6
+16       6
+17       8
+18       8
+19       6
+2       10
+20       9
+3        9
+4       11
+5        8
+6        8
+7       11
+8       12
+9       11
+CB-A     3
+CB-B     4
+
+Draft-pick summary
+------------------
+count    185.00
+mean     278.20
+std      180.35
+min        1.00
+25%      117.00
+50%      264.00
+75%      429.00
+max      612.00
+
+College PA summary
+------------------
+count    185.00
+mean     258.41
+std       41.51
+min       72.00
+25%      245.00
+50%      261.00
+75%      285.00
+max      347.00
+
+Players below PA thresholds
+---------------------------
+{'under_100_PA': 4, 'under_150_PA': 6}
+
+Position summary
+----------------
+          players  median_PA  median_OPS  median_BB_rate  median_K_rate  median_HR_rate
+position                                                                               
+SS             43      262.0       0.923           0.121          0.141           0.024
+C              31      254.0       0.890           0.123          0.157           0.030
+OF             27      266.0       0.990           0.096          0.171           0.039
+CF             22      259.5       0.880           0.110          0.176           0.022
+1B             18      252.5       1.062           0.123          0.159           0.058
+3B             17      272.0       1.017           0.136          0.145           0.050
+2B             13      285.0       0.888           0.136          0.147           0.030
+RF              7      239.0       0.884           0.096          0.132           0.041
+LF              5      277.0       0.967           0.102          0.153           0.034
+IF              1      231.0       0.827           0.074          0.117           0.017
+DH              1      306.0       1.064           0.127          0.114           0.052
+
+Spearman correlations with overall draft pick
+---------------------------------------------
+college_OPS        -0.378
+college_SLG        -0.346
+college_OBP        -0.345
+college_BA         -0.333
+college_ISO        -0.273
+college_HR_rate    -0.255
+college_XBH_rate   -0.217
+college_BB_rate    -0.186
+college_K_rate      0.107
+
+Top OPS performers with at least 100 PA
+---------------------------------------
+    player_name position  overall_pick  college_PA  college_OPS
+Adley Rutschman        C             1         266        1.326
+   Jake Sanford       OF           105         259        1.288
+ Peyton Burdick       OF            82         286        1.267
+     Kody Hoese       3B            25         286        1.265
+ Spencer Henson       1B           285         221        1.256
+  Andrew Vaughn       1B             3         245        1.243
+  Hunter Bishop       OF            10         280        1.227
+      Scott Ota       RF           298         238        1.207
+    Jake Holton       1B           292         257        1.178
+     Joey Ortiz       SS           108         288        1.171
+
+Players with fewer than 100 PA
+------------------------------
+  player_name position  overall_pick  college_PA  college_OPS  college_PA_under_100
+Zack Plunkett        C           611          72        0.931                     1
+ Chase Murray       OF           394          92        0.646                     1
+ Matt Fraizer       OF            95          94        1.017                     1
+ Jeremy Ydens       OF           243          99        0.797                     1

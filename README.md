@@ -176,23 +176,4 @@ python src/inspect_baseline_predictions_2019.py
 - Found that draft position currently provides the strongest baseline signal.
 - Prepared the project for multi-year expansion.
 
-## Next Steps
-
-- Create a year-independent five-year outcome-labeling process.
-- Collect the 2018 draft class.
-- Repeat the same workflow for draft years 2017–2011.
-- Add player age, conference, competition strength, and additional college features.
-- Compare college-only and combined models across multiple draft years.
-- Evaluate the final model using leave-one-draft-year-out validation.
-
-## Daily Update Template
-
-```markdown
-### YYYY-MM-DD — Short description
-
-- Data collected:
-- Scripts created or updated:
-- Quality checks completed:
-- Findings:
-- Next step:
-```
+### 2026-10-?? - Hopefully can do more when possible

@@ -1,0 +1,49 @@
+# MLB D1 Draft Predictor
+
+## Research Question
+
+Among position players drafted from NCAA Division I colleges between 2011 and 2019, what 
+factors predict whether a player records at least one MLB regular-season plate appearance by 
+December 31, 2024?
+
+## Included Players
+
+- Drafted from 2011 through 2019
+- Position players only
+- Played NCAA Division I baseball
+- Drafted from a D1 college
+- Has identifiable college statistics
+
+## Excluded Players
+
+- Pitchers
+- High-school-only draftees
+- Junior-college-only players
+- International amateur signees
+- Players whose identities cannot be reliably matched
+
+## Target Variable
+
+### made_mlb_by_2024
+
+- `1` = recorded at least one MLB regular-season plate appearance by December 31, 2024
+- `0` = did not
+
+## Draft Fields
+
+- `player_id`
+- `player_name`
+- `draft_year`
+- `draft_team`
+- `draft_round`
+- `overall_pick`
+- `position`
+- `age_at_draft`
+- `college`
+- `conference`
+
+## College Statistics
+
+- `college_season`
+- `college_games`
+- 

@@ -1,0 +1,11 @@
+player_name,pilot_label,query_used,mlb_id,matched_name,mlb_debut_date,api_position,made_mlb_by_2024,match_status,label_agrees
+Adley Rutschman,1,Adley Rutschman,668939,Adley Rutschman,2022-05-21,C,1,unique_match,True
+Andrew Vaughn,1,Andrew Vaughn,683734,Andrew Vaughn,2021-04-02,1B,1,unique_match,True
+Braden Shewmake,1,Braden Shewmake,669699,Braden Shewmake,2023-05-05,SS,1,unique_match,True
+Greg Jones,1,Greg Jones,675659,Greg Jones,2024-06-06,LF,1,unique_non_pitcher_match,True
+Hunter Bishop,0,Hunter Bishop,666183,Hunter Bishop,,OF,0,matched_no_mlb_debut,True
+J.J. Bleday,1,JJ Bleday,668709,JJ Bleday,2022-07-23,LF,1,unique_match,True
+Josh Jung,1,Josh Jung,673962,Josh Jung,2022-09-09,3B,1,unique_match,True
+Michael Busch,1,Michael Busch,683737,Michael Busch,2023-04-25,1B,1,unique_match,True
+Shea Langeliers,1,Shea Langeliers,669127,Shea Langeliers,2022-08-16,C,1,unique_match,True
+Will Wilson,0,Will Wilson,669717,Will Wilson,2025-04-23,3B,0,unique_match,True

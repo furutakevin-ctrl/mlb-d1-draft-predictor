@@ -1,0 +1,60 @@
+player_name,mlb_id,manual_status,manual_note
+Beau Philip,685121,position_conflict,MLB identifies him as a shortstop; API lists pitcher
+Will Holland,683735,confirmed,2019 Auburn shortstop drafted by Minnesota
+Pedro Pages,686780,confirmed,Official name is Pedro Pagés
+Tanner Murphy,669282,confirmed,2019 UNF outfielder drafted by the Mets
+Mike Wilson,670168,confirmed,Official full name is Michael Wilson; 2019 Brewers CF
+Brandon White,669155,confirmed,2019 Angels CF
+Jack Dunn,686639,confirmed,2019 Northwestern shortstop drafted by Washington
+Kevin Milam,687344,position_conflict,MLB identifies him as a pitcher; decide whether to exclude
+Brady McConnell,669381,confirmed,2019 Florida shortstop; Royals second-round pick
+Jake Sanford,666331,confirmed,2019 Western Kentucky outfielder; Yankees third-round pick
+Jaxx Groshans,686755,confirmed,2019 Kansas catcher; Red Sox fifth-round pick
+Matthew Barefoot,663452,confirmed,2019 Campbell center fielder; Astros sixth-round pick
+Spencer Brickhouse,669631,confirmed,2019 East Carolina first baseman; Diamondbacks seventh-round pick
+Jake Guenther,684580,confirmed,2019 TCU first baseman; Rays seventh-round pick
+Ivan Gonzalez,675625,confirmed,2019 West Virginia catcher; White Sox eighth-round pick
+Jack Kenley,687958,confirmed,2019 Arkansas shortstop; Tigers eighth-round pick
+Angel Camacho,688023,confirmed,2019 Jacksonville third baseman; Blue Jays eighth-round pick
+Nate Fassnacht,686492,confirmed,2019 George Washington shortstop; Phillies eighth-round pick
+Jeremy Ydens,669918,confirmed,2019 UCLA outfielder; Nationals eighth-round pick
+Joe Genord,664987,confirmed,2019 South Florida first baseman; Mets ninth-round pick
+Gabe Holt,686746,confirmed,2019 Texas Tech outfielder; Brewers seventh-round pick
+Tevin Mitchell,687524,confirmed,2019 UC Santa Barbara outfielder; Marlins eighth-round pick
+Rudy Rott,687959,confirmed,2019 Ohio first baseman; Phillies ninth-round pick
+Jordan Cannon,679779,confirmed,2019 Sam Houston State catcher; Orioles tenth-round pick
+Jeff Houghtby,674028,confirmed,2019 San Diego shortstop; Giants tenth-round pick
+Scott Ota,679295,confirmed,2019 UIC right fielder; Mets tenth-round pick
+Jonathan Embry,686649,confirmed,2019 Liberty catcher; Rays tenth-round pick
+Jack Yalowitz,687063,confirmed,2019 Illinois outfielder; Rockies tenth-round pick
+Zac Ching,687852,confirmed,2019 VCU shortstop; Dodgers tenth-round pick
+Patrick McColl,685808,confirmed,2019 Harvard first baseman; Athletics tenth-round pick
+Matthew Acosta,669101,confirmed,No MLB debut by 2024
+Kyle Wilkie,668740,confirmed,No MLB debut by 2024
+Harrison Freed,687466,confirmed,No MLB debut by 2024
+Chase Murray,668829,confirmed,No MLB debut by 2024
+Tommy Jew,686845,confirmed,No MLB debut by 2024
+Eric Rivera,687771,confirmed,No MLB debut by 2024
+Joe Aeilts,688030,confirmed,No MLB debut by 2024
+Ryan Reynolds,669026,confirmed,No MLB debut by 2024
+Connor Blair,685278,confirmed,No MLB debut by 2024
+Joe Vranesh,687992,confirmed,No MLB debut by 2024
+Josh Watson,663848,confirmed,No MLB debut by 2024
+Nic Gaddis,687090,confirmed,No MLB debut by 2024
+Chris Cornelius,674679,confirmed,No MLB debut by 2024
+Eli Wilson,670250,confirmed,No MLB debut by 2024
+Connor Cannon,669070,confirmed,No MLB debut by 2024
+Beau Philip,685121,confirmed,Draft roster position controls inclusion; later MLB profile lists pitcher
+Kevin Milam,687344,confirmed,Draft roster position controls inclusion; later MLB profile lists pitcher
+Nick Grande,687479,confirmed,No MLB debut by 2024
+Brandon Wulff,687034,confirmed,No MLB debut by 2024
+Alex Erro,690622,confirmed,No MLB debut by 2024
+Dustin Skelton,670236,confirmed,No MLB debut by 2024
+Jared Mang,687536,confirmed,No MLB debut by 2024
+Ricky Martinez,686980,confirmed,No MLB debut by 2024
+Cory Wood,669217,confirmed,No MLB debut by 2024
+Turner Brown,687894,confirmed,No MLB debut by 2024
+Joe Davis,663761,confirmed,No MLB debut by 2024
+Cameron Simmons,663828,confirmed,No MLB debut by 2024
+Thomas Rowan,656916,confirmed,No MLB debut by 2024
+Cam Shepherd,669017,confirmed,No MLB debut by 2024

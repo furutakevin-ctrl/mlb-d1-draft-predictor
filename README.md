@@ -72,16 +72,6 @@ The 2019 pilot dataset currently contains:
 
 The four players with fewer than 100 college plate appearances are retained but flagged for later sensitivity analysis.
 
-## Initial Findings
-
-The 2019 pilot produced several early observations:
-
-- Draft position has a strong relationship with MLB advancement.
-- Players who reached MLB had slightly higher average college OPS than players who did not.
-- The draft-pick-only baseline model currently performs better than the first combined model using draft pick, position, and college statistics.
-- This does not prove that college statistics are unhelpful. The current sample contains only one draft class and does not yet include age, conference strength, strength of schedule, or more advanced position-specific statistics.
-- The 2019 results are exploratory and should not be treated as a final predictive model.
-
 ## Modeling Strategy
 
 The modeling process will compare:
@@ -117,38 +107,6 @@ The final model should be evaluated on draft classes that were not used during t
 11. Perform cross-year validation
 12. Create a final probability model
 
-## Repository Structure
-
-```text
-mlb-d1-draft-predictor/
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── ...
-├── reports/
-├── src/
-├── README.md
-├── requirements.txt
-└── .gitignore
-```
-
-## Current 2019 Pipeline
-
-The primary 2019 workflow includes:
-
-```bash
-python src/build_master_2019.py
-python src/explore_2019.py
-python src/create_outcome_template.py
-python src/label_all_outcomes.py
-python src/apply_manual_overrides.py
-python src/build_modeling_2019.py
-python src/validate_modeling_2019.py
-python src/explore_outcomes_2019.py
-python src/baseline_models_2019.py
-python src/inspect_baseline_predictions_2019.py
-```
-
 ## Important Limitations
 
 - The current pilot contains only one draft class.
@@ -175,5 +133,11 @@ python src/inspect_baseline_predictions_2019.py
 - Built cross-validated baseline logistic-regression models.
 - Found that draft position currently provides the strongest baseline signal.
 - Prepared the project for multi-year expansion.
+- The 2019 pilot produced several early observations:
+  - Draft position has a strong relationship with MLB advancement.
+  - Players who reached MLB had slightly higher average college OPS than players who did not.
+  - The draft-pick-only baseline model currently performs better than the first combined model using draft pick, position, and college statistics.
+  - This does not prove that college statistics are unhelpful. The current sample contains only one draft class and does not yet include age, conference strength, strength of schedule, or more advanced position-specific statistics.
+  - The 2019 results are exploratory and should not be treated as a final predictive model.
 
 ### 2026-10-?? - Hopefully can do more when possible

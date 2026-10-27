@@ -37,23 +37,23 @@ Evaluation will use:
 
 ### 2026-10-25 — Completed the 2019 pilot analysis
 
-- Completed the 2019 D1 position-player draft roster.
-- Collected final-season college statistics.
-- Verified 185 unique players and draft picks.
-- Created the complete MLB outcome file.
-- Labeled all 185 players by MLB debut status through 2024.
-- Confirmed zero remaining outcome-review cases.
-- Created the final 2019 modeling dataset.
-- Ran data-quality validation successfully.
-- Built exploratory reports by draft round, draft position, position family, and college statistics.
-- Built cross-validated baseline logistic-regression models.
-- Found that draft position currently provides the strongest baseline signal.
-- Prepared the project for multi-year expansion.
+- Completed the 2019 D1 position-player draft roster
+- Collected final-season college statistics
+- Verified 185 unique players and draft picks
+- Created the complete MLB outcome file
+- Labeled all 185 players by MLB debut status through 2024
+- Confirmed zero remaining outcome-review cases
+- Created the final 2019 modeling dataset
+- Ran data-quality validation successfully
+- Built exploratory reports by draft round, draft position, position family, and college statistics
+- Built cross-validated baseline logistic-regression models
+- Found that draft position currently provides the strongest baseline signal
+- Prepared the project for multi-year expansion
 - The 2019 pilot produced several early observations:
-  - Draft position has a strong relationship with MLB advancement.
-  - Players who reached MLB had slightly higher average college OPS than players who did not.
-  - The draft-pick-only baseline model currently performs better than the first combined model using draft pick, position, and college statistics.
-  - This does not prove that college statistics are unhelpful. The current sample contains only one draft class and does not yet include age, conference strength, strength of schedule, or more advanced position-specific statistics.
-  - The 2019 results are exploratory and should not be treated as a final predictive model.
+  - Draft position has a strong relationship with MLB advancement
+  - Players who reached MLB had slightly higher average college OPS than players who did not
+  - The draft-pick-only baseline model currently performs better than the first combined model using draft pick, position, and college statistics
+  - This does not prove that college statistics are unhelpful
+  - The 2019 results are exploratory and should not be treated as a final predictive model
 
 ### 2026-10-?? - Hopefully can do more when possible

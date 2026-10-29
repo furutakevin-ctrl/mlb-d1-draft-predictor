@@ -4,7 +4,7 @@ A baseball analytics project studying whether final-season NCAA Division I stati
 
 ## Project Goal
 
-The initial goal is to estimate whether a drafted college position player ever records at least one MLB regular-season plate appearance.
+The primary goal is to estimate whether a drafted college position player ever records at least one MLB regular-season plate appearance. More specific outcomes—such as debut timing, sustained service time, or productive MLB performance—may be studied separately later.
 
 The project also investigates a broader baseball question:
 
@@ -20,9 +20,9 @@ The planned dataset will include:
 - Players selected in the first 20 draft rounds
 - Competitive-balance selections included when applicable
 - Final college season before the player was drafted
-- MLB debut outcome, ever by the outcome check date
+- Primary outcome: at least one MLB regular-season plate appearance at any point by the outcome check date (`made_mlb_ever`)
 
-Pitchers are excluded from the primary model. Two-way players are reviewed individually, with draft-day position used as the primary inclusion rule.
+Pitchers are excluded from the primary model. Two-way players are reviewed individually, with draft-day position used as the primary inclusion rule. The current multi-year candidate filter uses MLB Stats API position and still needs draft-day verification.
 
 ## Outcome Definition
 
@@ -36,21 +36,21 @@ Current and planned sources include:
 
 - MLB Draft Tracker for draft year, round, pick, school, and position
 - The Baseball Cube for college and professional statistics
-- MLB Stats API for player identification and MLB debut information
+- MLB Stats API for player identification, career MLB hitting statistics, and debut information
 - Official college athletic websites when needed for verification
 
 Source URLs are stored in the dataset whenever possible.
 
-## 2019 Pilot Dataset (historical labels through 2024)
+## 2019 Pilot Dataset (made_mlb_ever; refreshed 2026-10-29)
 
-The attached pilot snapshot contains historical 2019 labels through December 31, 2024. Those labels and derived reports must be refreshed before they can represent `made_mlb_ever` as of a later date. The snapshot contains:
+The latest 2019 run labels a player positive if they have at least one regular-season MLB plate appearance by the outcome check date. The run contains:
 
 | Measurement | Result |
 |---|---:|
 | Total players | 185 |
-| MLB players by 2024 | 45 |
-| Players not in MLB by 2024 | 140 |
-| Overall MLB rate | 24.3% |
+| Players with an MLB regular-season PA | 59 |
+| Players with no recorded MLB PA | 126 |
+| Overall MLB rate | 31.9% |
 | Missing core outcome labels | 0 |
 | Pitcher-labeled rows | 0 |
 | Players under 100 college PA | 4 |
@@ -59,7 +59,9 @@ The four players with fewer than 100 college plate appearances are retained but 
 
 ## Current data status
 
-The checked-in 2019 processed outcome/model files and reports still contain the former December 31, 2024 labels and metrics. Treat them as historical only. Run the outcome-template, MLB lookup, manual-review, and modeling-build steps again to create `made_mlb_ever` labels current through the refresh date before fitting models. The existing scripts are still 2019-specific; generalizing collection and processing across 2011–2018 is the next stage.
+The 2019 outcome and baseline-model pipeline has been rerun with the `made_mlb_ever` definition; the latest run has 59 positive outcomes among 185 players. Record the outcome check date for each refresh because recent draft classes have had less time to reach MLB.
+
+For 2011–2018, the first-20-round draft candidate roster and annual SOS source tables have been collected. The current pass matched 1,220 candidates to a D1 SOS table and left 972 school/player records for review. These are provisional counts: unmatched schools include high schools, junior colleges, non-D1 programs, and possible naming variants. The current-position field comes from the MLB Stats API and must be checked against draft-day position. College statistics, ages, and MLB outcome labels for these years have not yet been collected and finalized.
 
 The 2019 competition feature is `team_SOS`, the numeric end-of-season Division I strength-of-schedule value from WarrenNolan.com. The source excludes games against the team in question when computing opponents' records. Since the season-end value can include games after the MLB Draft, treat it as retrospective; use a pre-draft snapshot for a draft-day prediction.
 
@@ -67,7 +69,7 @@ The 2019 `age_at_draft` feature is calculated in decimal years from the MLB Stat
 
 ## Initial Findings
 
-The historical 2019 pilot produced several early observations under the old by-2024 label:
+The refreshed 2019 pilot produced several early observations under the current `made_mlb_ever` label:
 
 - Draft position has a strong relationship with MLB advancement.
 - Players who reached MLB had slightly higher average college OPS than players who did not.
@@ -100,13 +102,13 @@ The final model should be evaluated on draft classes that were not used during t
 1. Build the draft-player roster
 2. Collect final-season college statistics
 3. Standardize player names, positions, and schools
-4. Verify MLB identities and debut dates
-5. Create five-year outcome labels
+4. Verify MLB identities and career hitting statistics
+5. Create `made_mlb_ever` labels (at least one regular-season MLB PA by the check date)
 6. Run data-quality checks
 7. Explore relationships between features and outcomes
 8. Build baseline models
 9. Compare model performance
-10. Add draft years 2018–2011
+10. Complete roster review and add final-season features and outcomes for draft years 2018–2011
 11. Perform cross-year validation
 12. Create a final probability model
 
@@ -150,7 +152,7 @@ python src/inspect_baseline_predictions_2019.py
 - The number of successful MLB outcomes is relatively small.
 - Draft position contains information from scouting departments and professional organizations.
 - College statistics are affected by playing time, competition, conference, park, age, and team context.
-- MLB debut is a relatively low threshold and does not measure long-term quality or career value.
+- One MLB plate appearance is a low threshold and does not measure sustained service time, production, or career value.
 - Players with small college samples may create unstable observations.
 - A model trained on one draft class may not generalize to other years.
 
@@ -162,7 +164,7 @@ python src/inspect_baseline_predictions_2019.py
 - Collected final-season college statistics.
 - Verified 185 unique players and draft picks.
 - Created the complete MLB outcome file.
-- Labeled all 185 players by MLB debut status through 2024.
+- Created the historical 2019 labels through December 31, 2024; those labels were later superseded by the `made_mlb_ever` refresh.
 - Confirmed zero remaining outcome-review cases.
 - Created the final 2019 modeling dataset.
 - Ran data-quality validation successfully.
@@ -171,4 +173,12 @@ python src/inspect_baseline_predictions_2019.py
 - Found that draft position currently provides the strongest baseline signal.
 - Prepared the project for multi-year expansion.
 
-### 2026-10-?? - Hopefully can do more when possible
+### 2026-10-29 — Expanded multi-year data collection and updated the outcome scope
+
+- Confirmed the primary outcome as `made_mlb_ever`: at least one MLB regular-season plate appearance by the outcome check date, rather than a five-year debut window.
+- Refreshed the 2019 modeling run: 185 players, 59 positive outcomes, 126 negative outcomes, and no missing core labels; reran model comparisons.
+- Collected 4,817 MLB draft candidates from the first 20 rounds of the 2011–2018 drafts.
+- Collected 2,394 annual team SOS records and added school-name aliases for matching candidates to the year-specific D1 SOS tables.
+- Current screening matches 1,220 non-pitcher API-position candidates to a D1 SOS record; 972 school/player records remain for review. This is not yet the final D1 position-player cohort.
+- Added a warning that MLB Stats API position may differ from the player's draft-day position; verify it before final cohort selection.
+- Pushed the project checkpoint to GitHub (`6faba1d`).

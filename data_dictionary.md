@@ -1,96 +1,50 @@
-# MLB D1 Draft Predictor
+# MLB D1 Draft Predictor — Data Dictionary
 
-## Research Question
+## Research question
 
-Among position players drafted from NCAA Division I colleges between 2011 
-and 2019, what factors predict whether a player records at least one MLB 
-regular-season plate appearance by December 31, 2024?
+Among NCAA Division I position players drafted in the first 20 rounds, which information available by draft day helps identify players who eventually reach MLB? The value-focused models omit draft position so they can assess college performance, age, and schedule strength on their own.
 
-## Included Players
+## Scope
 
-- Drafted from 2011 through 2019
-- Position players only
-- Played NCAA Division I baseball
-- Drafted from a D1 college
-- Has identifiable college statistics
+- Draft years: 2011–2019 (2019 pilot currently implemented)
+- NCAA Division I position players drafted in the first 20 rounds, including competitive-balance selections where applicable
+- College statistics from the final NCAA season before the draft
+- Pitchers excluded; two-way players reviewed using draft-day position
 
-## Excluded Players
+## Target
 
-- Pitchers
-- High-school-only draftees
-- Junior-college-only players
-- International amateur signees
-- Players whose identities cannot be reliably matched
+### `made_mlb_ever`
 
-## Target Variable
+- `1` = recorded at least one MLB regular-season plate appearance, at any point in their career, as of the outcome check date
+- `0` = zero MLB regular-season plate appearances recorded as of that date
+- Missing = identity or outcome still requires review
 
-### made_mlb_by_2024
+The label is an “ever by the checked-through date” outcome. Record the data check date and use draft classes with enough follow-up; recent classes can otherwise be right-censored. The label is based on MLB Stats API regular-season career hitting plate appearances, not debut date alone. Player identity matches must be reviewed.
 
-- `1` = recorded at least one MLB regular-season plate appearance by 
-December 31, 2024
-- `0` = did not
+## Draft fields
 
-## Draft Fields
+`player_id`, `player_name`, `draft_year`, `draft_team`, `draft_round`, `overall_pick`, `position`, `age_at_draft`, `college`, `conference`
 
-- `player_id`
-- `player_name`
-- `draft_year`
-- `draft_team`
-- `draft_round`
-- `overall_pick`
-- `position`
-- `age_at_draft`
-- `college`
-- `conference`
+`age_at_draft` is age in decimal years on the player's actual 2019 selection date. The 2019 draft ran June 3–5; the age script uses MLB's draft pick record to match players, their MLB Stats API birth dates, and the calendar day associated with their round/pick.
 
-## College Statistics
+## College statistics
 
-- `college_season`
-- `college_games`
-- `college_PA`
-- `college_AB`
-- `college_BA`
-- `college_OBP`
-- `college_SLG`
-- `college_OPS`
-- `college_HR`
-- `college_BB`
-- `college_SO`
-- `college_SB`
-- `career_college_PA`
-- `career_college_BA`
-- `career_college_OBP`
-- `career_college_SLG`
+`college_season`, `college_games`, `college_PA`, `college_AB`, `college_BA`, `college_OBP`, `college_SLG`, `college_OPS`, `college_HR`, `college_BB`, `college_SO`, `college_SB`, `career_college_PA`, `career_college_BA`, `career_college_OBP`, `career_college_SLG`
 
-## Competition Fields
+## Competition fields
 
-- `team_RPI`
-- `conference_strength`
-- `conference_strength_percentile`
+- `team_SOS`: WarrenNolan.com 2019 final season strength-of-schedule value, from 0 to 1. The source defines records using Division I opponents and excludes games against the team whose schedule is being measured.
+- `team_SOS_rank`: source rank for quality checks; the model uses the numeric `team_SOS` value.
+- `team_SOS_source_team`, `team_SOS_source_url`: source provenance.
+- `birth_date`, `draft_date`, `draft_person_id`, `age_source_url`: age calculation provenance.
+- `team_RPI`, `conference_strength`, `conference_strength_percentile`: planned or optional fields when available.
 
-## Outcome Fields
+The 2019 source value is season-end SOS, so it may include games played after the MLB Draft. It is suitable for this retrospective 2019 comparison, but a draft-day prediction must use a schedule-strength snapshot ending on or before the draft date.
 
-- `made_mlb_by_2024`
-- `mlb_debut_year`
+## Outcome and quality fields
 
-## Data Quality Fields
+`made_mlb_ever`, `mlb_career_pa`, `mlb_debut_year`, `outcome_checked_date`, `source_draft`, `source_college`, `source_outcome`, `verified`, `notes`
 
-- `source_draft`
-- `source_college`
-- `source_outcome`
-- `verified`
-- `notes`
+## Modeling rule
 
-## Modeling Rules
-
-Only use information available before or at the time of the draft as model 
-predictors.
-
-Do not use future minor-league or MLB statistics as predictors of MLB 
-debut.
-
-Use a time-based split:
-
-- Training: 2011–2015
-- Validation: 2016–2017
-- Testing: 2018–2019
+Use only information available by the draft as predictors. Do not use future minor-league or MLB statistics as predictors. Compare models with and without draft position; the college-only feature sets are central to the value-identification question. Treat season-end SOS as retrospective until replaced with a pre-draft snapshot.

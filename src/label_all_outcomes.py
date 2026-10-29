@@ -31,7 +31,6 @@ SSL_CONTEXT = ssl.create_default_context(
 )
 
 BASE_URL = "https://statsapi.mlb.com/api/v1/people/search"
-CUTOFF_DATE = "2024-12-31"
 
 
 def name_variants(name):
@@ -64,6 +63,30 @@ def search_player(name):
             return candidates, search_name
 
     return [], None
+
+
+def career_mlb_plate_appearances(mlb_id):
+    query = urlencode({
+        "stats": "yearByYear",
+        "group": "hitting",
+        "sportIds": 1,
+        "gameType": "R",
+    })
+    request = Request(
+        f"https://statsapi.mlb.com/api/v1/people/{int(mlb_id)}/stats?{query}",
+        headers={"User-Agent": "mlb-d1-draft-predictor"},
+    )
+    with urlopen(request, timeout=20, context=SSL_CONTEXT) as response:
+        payload = json.load(response)
+    splits = [
+        split
+        for group in payload.get("stats", [])
+        for split in group.get("splits", [])
+    ]
+    return sum(
+        int(split.get("stat", {}).get("plateAppearances", 0))
+        for split in splits
+    )
 
 
 def api_position(player):
@@ -134,7 +157,8 @@ for _, row in template.iterrows():
 
     debut_date = None
     debut_year = pd.NA
-    made_mlb_by_2024 = pd.NA
+    made_mlb_ever = pd.NA
+    mlb_career_pa = pd.NA
 
     if selected is not None:
         debut_date = selected.get("mlbDebutDate")
@@ -146,15 +170,16 @@ for _, row in template.iterrows():
             "position_conflict_review",
             "manual_review",
         }:
-            if debut_date is None:
-                made_mlb_by_2024 = 0
-                match_status = "matched_no_mlb_debut"
-            elif debut_date <= CUTOFF_DATE:
-                made_mlb_by_2024 = 1
-                match_status = "made_by_cutoff"
-            else:
-                made_mlb_by_2024 = 0
-                match_status = "debut_after_cutoff"
+            try:
+                mlb_career_pa = career_mlb_plate_appearances(selected["id"])
+                made_mlb_ever = int(mlb_career_pa > 0)
+                match_status = (
+                    "recorded_mlb_pa" if made_mlb_ever
+                    else "no_mlb_pa_as_of_check"
+                )
+            except Exception as error:
+                match_status = "mlb_pa_lookup_error"
+                print(f"PA lookup failed for {name}: {error}")
 
     output_row = row.to_dict()
 
@@ -174,10 +199,15 @@ for _, row in template.iterrows():
                 if selected
                 else pd.NA
             ),
-            "made_mlb_by_2024": made_mlb_by_2024,
+            "made_mlb_ever": made_mlb_ever,
+            "mlb_career_pa": mlb_career_pa,
+            "outcome_checked_date": pd.Timestamp.now().date().isoformat(),
             "match_status": match_status,
             "candidate_summary": candidate_summary(candidates),
-            "outcome_source": BASE_URL,
+            "outcome_source": (
+                f"https://statsapi.mlb.com/api/v1/people/{selected['id']}/stats"
+                if selected is not None else BASE_URL
+            ),
         }
     )
 
@@ -191,13 +221,13 @@ OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
 results_df.to_csv(OUTPUT_PATH, index=False)
 
 manual_review = results_df[
-    results_df["made_mlb_by_2024"].isna()
+    results_df["made_mlb_ever"].isna()
 ]
 
 print(f"Players checked: {len(results_df)}")
 print(
     "Automatically labeled:",
-    int(results_df["made_mlb_by_2024"].notna().sum()),
+    int(results_df["made_mlb_ever"].notna().sum()),
 )
 print(
     "Manual review needed:",
@@ -205,7 +235,7 @@ print(
 )
 print("\nOutcome counts:")
 print(
-    results_df["made_mlb_by_2024"]
+    results_df["made_mlb_ever"]
     .value_counts(dropna=False)
     .to_string()
 )

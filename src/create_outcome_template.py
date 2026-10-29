@@ -38,18 +38,19 @@ outcomes["mlb_debut_year"] = pd.Series(
     dtype="Int64",
 )
 
-outcomes["made_mlb_by_2024"] = pd.Series(
+outcomes["mlb_career_pa"] = pd.Series(
     pd.NA,
     index=outcomes.index,
     dtype="Int64",
 )
 
-outcomes["mlb_games_by_2024"] = pd.Series(
+outcomes["made_mlb_ever"] = pd.Series(
     pd.NA,
     index=outcomes.index,
     dtype="Int64",
 )
 
+outcomes["outcome_checked_date"] = ""
 outcomes["outcome_source"] = ""
 outcomes["outcome_notes"] = ""
 
@@ -57,4 +58,4 @@ outcomes.to_csv(OUTPUT_PATH, index=False)
 
 print(f"Created: {OUTPUT_PATH}")
 print(f"Players: {len(outcomes)}")
-print(f"Unlabeled outcomes: {outcomes['made_mlb_by_2024'].isna().sum()}")
+print(f"Unlabeled outcomes: {outcomes['made_mlb_ever'].isna().sum()}")

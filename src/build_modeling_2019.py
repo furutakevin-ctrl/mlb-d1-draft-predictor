@@ -36,7 +36,7 @@ outcomes = pd.read_csv(OUTCOME_PATH)
 master = clean_keys(master)
 outcomes = clean_keys(outcomes)
 
-required_outcome_column = "made_mlb_by_2024"
+required_outcome_column = "made_mlb_ever"
 
 if required_outcome_column not in outcomes.columns:
     raise ValueError(
@@ -107,8 +107,9 @@ if not name_mismatches.empty:
 outcome_columns = [
     "mlb_id",
     "mlb_debut_year",
-    "made_mlb_by_2024",
-    "mlb_games_by_2024",
+    "mlb_career_pa",
+    "made_mlb_ever",
+    "outcome_checked_date",
     "outcome_source",
     "outcome_notes",
     "match_status",

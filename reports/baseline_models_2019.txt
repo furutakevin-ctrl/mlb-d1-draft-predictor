@@ -2,17 +2,24 @@
 ================================
 
 Players: 185
-Positive outcomes: 45
-Overall MLB rate: 24.3%
+Positive outcomes: 59
+Overall MLB rate: 31.9%
 
 Constant-probability baseline:
-Brier score: 0.1841
+Brier score: 0.2172
 
 Cross-validated model results:
-                   model  roc_auc  average_precision  brier_score  log_loss
-         draft_pick_only   0.8046             0.5791       0.1417    0.4432
-draft_pick_plus_position   0.7949             0.5763       0.1424    0.4488
- draft_pick_plus_college   0.7708             0.4699       0.1557    0.4790
+                          model  roc_auc  average_precision  brier_score  log_loss
+                draft_pick_only   0.7924             0.6476       0.1658    0.5065
+       draft_pick_plus_position   0.7876             0.6572       0.1667    0.5092
+        draft_pick_plus_college   0.7651             0.5887       0.1747    0.5308
+    draft_pick_plus_college_sos   0.7634             0.5899       0.1759    0.5346
+    draft_pick_plus_college_age   0.7628             0.5862       0.1770    0.5345
+draft_pick_plus_college_age_sos   0.7604             0.5968       0.1786    0.5389
+             college_stats_only   0.5436             0.3446       0.2211    0.6322
+         college_stats_plus_sos   0.5690             0.3676       0.2196    0.6301
+         college_stats_plus_age   0.6173             0.4147       0.2127    0.6129
+     college_stats_plus_age_sos   0.6361             0.4380       0.2106    0.6095
 
 Metric meanings:
 ROC-AUC: ranking quality; higher is better.

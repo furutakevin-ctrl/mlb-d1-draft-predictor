@@ -19,7 +19,7 @@ print("\nMISSING VALUES")
 print(df.isna().sum())
 
 print("\nOUTCOME COUNTS")
-print(df["made_mlb_by_2024"].value_counts().sort_index())
+print(df["made_mlb_ever"].value_counts().sort_index())
 
 print("\nDATA TYPES")
 print(df.dtypes)
@@ -33,7 +33,7 @@ checks = {
     "batting_average_valid": df["college_BA"].between(0, 1).all(),
     "on_base_percentage_valid": df["college_OBP"].between(0, 1).all(),
     "slugging_percentage_valid": df["college_SLG"].between(0, 2).all(),
-    "outcome_valid": df["made_mlb_by_2024"].isin([0, 1]).all(),
+    "outcome_valid": df["made_mlb_ever"].isin([0, 1]).all(),
 }
 
 for check_name, passed in checks.items():

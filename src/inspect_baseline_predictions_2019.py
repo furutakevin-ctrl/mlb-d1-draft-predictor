@@ -20,7 +20,7 @@ REPORT_PATH = (
 
 df = pd.read_csv(PREDICTIONS_PATH)
 
-target = "made_mlb_by_2024"
+target = "made_mlb_ever"
 
 model_columns = [
     "draft_pick_only",

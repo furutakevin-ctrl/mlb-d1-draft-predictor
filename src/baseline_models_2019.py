@@ -31,8 +31,8 @@ PREDICTION_PATH = (
 
 df = pd.read_csv(DATA_PATH)
 
-df["made_mlb_by_2024"] = pd.to_numeric(
-    df["made_mlb_by_2024"]
+df["made_mlb_ever"] = pd.to_numeric(
+    df["made_mlb_ever"]
 )
 
 df["overall_pick"] = pd.to_numeric(
@@ -51,7 +51,7 @@ df.loc[
     "position_family",
 ] = "IF"
 
-target = "made_mlb_by_2024"
+target = "made_mlb_ever"
 y = df[target].astype(int)
 
 cross_validator = StratifiedKFold(
@@ -129,6 +129,14 @@ def build_pipeline(numeric_features, categorical_features):
     )
 
 
+college_features = [
+    "college_PA",
+    "college_OPS",
+    "college_BB_rate",
+    "college_K_rate",
+    "college_HR_rate",
+]
+
 model_specs = {
     "draft_pick_only": {
         "numeric": ["overall_pick"],
@@ -139,15 +147,41 @@ model_specs = {
         "categorical": ["position_family"],
     },
     "draft_pick_plus_college": {
+        "numeric": ["overall_pick", *college_features],
+        "categorical": ["position_family"],
+    },
+    "draft_pick_plus_college_sos": {
+        "numeric": ["overall_pick", *college_features, "team_SOS"],
+        "categorical": ["position_family"],
+    },
+    "draft_pick_plus_college_age": {
+        "numeric": ["overall_pick", *college_features, "age_at_draft"],
+        "categorical": ["position_family"],
+    },
+    "draft_pick_plus_college_age_sos": {
         "numeric": [
             "overall_pick",
-            "college_PA",
-            "college_OPS",
-            "college_BB_rate",
-            "college_K_rate",
-            "college_HR_rate",
+            *college_features,
+            "age_at_draft",
+            "team_SOS",
         ],
         "categorical": ["position_family"],
+    },
+    "college_stats_only": {
+        "numeric": college_features,
+        "categorical": [],
+    },
+    "college_stats_plus_sos": {
+        "numeric": [*college_features, "team_SOS"],
+        "categorical": [],
+    },
+    "college_stats_plus_age": {
+        "numeric": [*college_features, "age_at_draft"],
+        "categorical": [],
+    },
+    "college_stats_plus_age_sos": {
+        "numeric": [*college_features, "age_at_draft", "team_SOS"],
+        "categorical": [],
     },
 }
 

@@ -53,6 +53,30 @@ def search_player(name):
     return [], None
 
 
+def career_mlb_plate_appearances(mlb_id):
+    query = urlencode({
+        "stats": "yearByYear",
+        "group": "hitting",
+        "sportIds": 1,
+        "gameType": "R",
+    })
+    request = Request(
+        f"https://statsapi.mlb.com/api/v1/people/{int(mlb_id)}/stats?{query}",
+        headers={"User-Agent": "mlb-d1-draft-predictor"},
+    )
+    with urlopen(request, timeout=20, context=SSL_CONTEXT) as response:
+        payload = json.load(response)
+    splits = [
+        split
+        for group in payload.get("stats", [])
+        for split in group.get("splits", [])
+    ]
+    return sum(
+        int(split.get("stat", {}).get("plateAppearances", 0))
+        for split in splits
+    )
+
+
 def position_code(player):
     return (player.get("primaryPosition") or {}).get("abbreviation")
 
@@ -82,27 +106,37 @@ for _, row in pilot.iterrows():
             match_status = "unique_non_pitcher_match"
 
     debut_date = None
-    made_mlb_by_2024 = pd.NA
+    made_mlb_ever = pd.NA
 
     if selected is not None:
         debut_date = selected.get("mlbDebutDate")
 
-        if debut_date is None:
-            made_mlb_by_2024 = 0
-            match_status = "matched_no_mlb_debut"
-        else:
-            made_mlb_by_2024 = int(debut_date <= "2024-12-31")
+        try:
+            mlb_career_pa = career_mlb_plate_appearances(selected["id"])
+            made_mlb_ever = int(mlb_career_pa > 0)
+            match_status = (
+                "recorded_mlb_pa" if made_mlb_ever
+                else "no_mlb_pa_as_of_check"
+            )
+        except Exception as error:
+            mlb_career_pa = pd.NA
+            made_mlb_ever = pd.NA
+            match_status = "mlb_pa_lookup_error"
+            print(f"PA lookup failed for {name}: {error}")
+    else:
+        mlb_career_pa = pd.NA
 
     results.append(
         {
             "player_name": name,
-            "pilot_label": row["made_mlb_by_2024"],
+            "historical_label_by_2024": row.get("made_mlb_by_2024", pd.NA),
             "query_used": query_used,
             "mlb_id": selected.get("id") if selected else pd.NA,
             "matched_name": selected.get("fullName") if selected else pd.NA,
             "mlb_debut_date": debut_date,
             "api_position": position_code(selected) if selected else pd.NA,
-            "made_mlb_by_2024": made_mlb_by_2024,
+            "made_mlb_ever": made_mlb_ever,
+            "mlb_career_pa": mlb_career_pa,
             "match_status": match_status,
         }
     )
@@ -111,9 +145,9 @@ for _, row in pilot.iterrows():
 
 results = pd.DataFrame(results)
 
-results["label_agrees"] = (
-    results["pilot_label"].astype("Int64")
-    == results["made_mlb_by_2024"].astype("Int64")
+results["matches_historical_by_2024_label"] = (
+    results["historical_label_by_2024"].astype("Int64")
+    == results["made_mlb_ever"].astype("Int64")
 )
 
 OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)

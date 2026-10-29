@@ -12,7 +12,7 @@ print(f"Columns: {len(df.columns)}")
 
 print("\n=== MLB OUTCOME COUNTS ===")
 outcomes = (
-    df["made_mlb_by_2024"]
+    df["made_mlb_ever"]
     .value_counts()
     .sort_index()
     .rename(index={
@@ -23,12 +23,12 @@ outcomes = (
 print(outcomes)
 
 print("\n=== OVERALL MLB RATE ===")
-mlb_rate = df["made_mlb_by_2024"].mean() * 100
+mlb_rate = df["made_mlb_ever"].mean() * 100
 print(f"{mlb_rate:.1f}%")
 
 print("\n=== DRAFT PICK BY OUTCOME ===")
 print(
-    df.groupby("made_mlb_by_2024")["overall_pick"]
+    df.groupby("made_mlb_ever")["overall_pick"]
     .agg(["count", "mean", "median", "min", "max"])
     .rename(index={
         0: "Did not reach MLB",
@@ -38,7 +38,7 @@ print(
 
 print("\n=== COLLEGE OPS BY OUTCOME ===")
 print(
-    df.groupby("made_mlb_by_2024")["college_OPS"]
+    df.groupby("made_mlb_ever")["college_OPS"]
     .agg(["count", "mean", "median", "min", "max"])
     .rename(index={
         0: "Did not reach MLB",
@@ -48,7 +48,7 @@ print(
 
 print("\n=== COLLEGE OBP BY OUTCOME ===")
 print(
-    df.groupby("made_mlb_by_2024")["college_OBP"]
+    df.groupby("made_mlb_ever")["college_OBP"]
     .agg(["count", "mean", "median", "min", "max"])
     .rename(index={
         0: "Did not reach MLB",
@@ -58,7 +58,7 @@ print(
 
 print("\n=== COLLEGE SLG BY OUTCOME ===")
 print(
-    df.groupby("made_mlb_by_2024")["college_SLG"]
+    df.groupby("made_mlb_ever")["college_SLG"]
     .agg(["count", "mean", "median", "min", "max"])
     .rename(index={
         0: "Did not reach MLB",
@@ -77,7 +77,7 @@ columns = [
     "college_SLG",
     "college_HR",
     "college_SB",
-    "made_mlb_by_2024",
+    "made_mlb_ever",
 ]
 
 print(

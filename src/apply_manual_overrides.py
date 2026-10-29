@@ -1,6 +1,7 @@
 import json
 import ssl
 from pathlib import Path
+from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 import certifi
@@ -35,6 +36,30 @@ SSL_CONTEXT = ssl.create_default_context(
 )
 
 PEOPLE_URL = "https://statsapi.mlb.com/api/v1/people"
+
+
+def career_mlb_plate_appearances(mlb_id):
+    query = urlencode({
+        "stats": "yearByYear",
+        "group": "hitting",
+        "sportIds": 1,
+        "gameType": "R",
+    })
+    request = Request(
+        f"{PEOPLE_URL}/{int(mlb_id)}/stats?{query}",
+        headers={"User-Agent": "mlb-d1-draft-predictor"},
+    )
+    with urlopen(request, timeout=20, context=SSL_CONTEXT) as response:
+        payload = json.load(response)
+    splits = [
+        split
+        for group in payload.get("stats", [])
+        for split in group.get("splits", [])
+    ]
+    return sum(
+        int(split.get("stat", {}).get("plateAppearances", 0))
+        for split in splits
+    )
 
 
 def normalize_name(value):
@@ -73,8 +98,8 @@ overrides["player_key"] = overrides["player_name"].map(
     normalize_name
 )
 
-outcomes["made_mlb_by_2024"] = pd.to_numeric(
-    outcomes["made_mlb_by_2024"],
+outcomes["made_mlb_ever"] = pd.to_numeric(
+    outcomes["made_mlb_ever"],
     errors="coerce",
 ).astype("Int64")
 
@@ -143,28 +168,28 @@ for _, override in overrides.iterrows():
         ensure_ascii=False,
     )
     outcomes.at[row_index, "outcome_source"] = (
-        f"{PEOPLE_URL}/{mlb_id}"
+        f"{PEOPLE_URL}/{mlb_id}/stats"
     )
 
     if manual_status == "confirmed":
-        if debut_date is None:
-            outcomes.at[row_index, "made_mlb_by_2024"] = 0
-            outcomes.at[
-                row_index, "match_status"
-            ] = "manual_confirmed_no_mlb_debut"
-        elif debut_date <= "2024-12-31":
-            outcomes.at[row_index, "made_mlb_by_2024"] = 1
-            outcomes.at[
-                row_index, "match_status"
-            ] = "manual_confirmed_made_by_cutoff"
-        else:
-            outcomes.at[row_index, "made_mlb_by_2024"] = 0
-            outcomes.at[
-                row_index, "match_status"
-            ] = "manual_confirmed_after_cutoff"
+        try:
+            career_pa = career_mlb_plate_appearances(mlb_id)
+            outcomes.at[row_index, "mlb_career_pa"] = career_pa
+            outcomes.at[row_index, "made_mlb_ever"] = int(career_pa > 0)
+            outcomes.at[row_index, "outcome_checked_date"] = (
+                pd.Timestamp.now().date().isoformat()
+            )
+            outcomes.at[row_index, "match_status"] = (
+                "manual_confirmed_recorded_mlb_pa"
+                if career_pa > 0 else "manual_confirmed_no_mlb_pa_as_of_check"
+            )
+        except Exception as error:
+            outcomes.at[row_index, "made_mlb_ever"] = pd.NA
+            outcomes.at[row_index, "match_status"] = "mlb_pa_lookup_error"
+            print(f"PA lookup failed for {override['player_name']}: {error}")
 
     elif manual_status == "position_conflict":
-        outcomes.at[row_index, "made_mlb_by_2024"] = pd.NA
+        outcomes.at[row_index, "made_mlb_ever"] = pd.NA
         outcomes.at[
             row_index, "match_status"
         ] = "manual_position_conflict"
@@ -173,13 +198,13 @@ for _, override in overrides.iterrows():
 outcomes.to_csv(OUTPUT_PATH, index=False)
 
 remaining_review = outcomes[
-    outcomes["made_mlb_by_2024"].isna()
+    outcomes["made_mlb_ever"].isna()
 ]
 
 print(f"Created: {OUTPUT_PATH}")
 print(
     "Automatically labeled:",
-    int(outcomes["made_mlb_by_2024"].notna().sum()),
+    int(outcomes["made_mlb_ever"].notna().sum()),
 )
 print(
     "Still requiring review:",
@@ -187,7 +212,7 @@ print(
 )
 print("\nOutcome counts:")
 print(
-    outcomes["made_mlb_by_2024"]
+    outcomes["made_mlb_ever"]
     .value_counts(dropna=False)
     .to_string()
 )

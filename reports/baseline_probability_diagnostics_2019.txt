@@ -4,56 +4,56 @@
 DRAFT_PICK_ONLY
 ----------------------------------------
  probability_quintile  players average_predicted_probability actual_mlb_rate
-                    1       37                          2.9%            5.4%
-                    2       37                          9.2%            8.1%
-                    3       37                         19.7%           16.2%
-                    4       37                         35.5%           27.0%
-                    5       37                         54.7%           64.9%
+                    1       37                          5.7%            8.1%
+                    2       37                         15.1%           18.9%
+                    3       37                         29.1%           21.6%
+                    4       37                         46.1%           37.8%
+                    5       37                         63.8%           73.0%
 
 DRAFT_PICK_PLUS_POSITION
 ----------------------------------------
  probability_quintile  players average_predicted_probability actual_mlb_rate
-                    1       37                          2.6%            5.4%
-                    2       37                          8.8%            8.1%
-                    3       37                         19.1%           16.2%
-                    4       37                         36.0%           32.4%
-                    5       37                         54.9%           59.5%
+                    1       37                          5.5%           10.8%
+                    2       37                         15.1%           13.5%
+                    3       37                         28.8%           18.9%
+                    4       37                         47.5%           48.6%
+                    5       37                         63.8%           67.6%
 
 DRAFT_PICK_PLUS_COLLEGE
 ----------------------------------------
  probability_quintile  players average_predicted_probability actual_mlb_rate
-                    1       37                          2.2%            5.4%
-                    2       37                          7.7%            8.1%
-                    3       37                         19.2%           16.2%
-                    4       37                         37.3%           43.2%
-                    5       37                         57.9%           48.6%
+                    1       37                          4.7%           10.8%
+                    2       37                         12.6%           13.5%
+                    3       37                         30.7%           24.3%
+                    4       37                         46.5%           45.9%
+                    5       37                         66.4%           64.9%
 
 
 HIGHEST DRAFT-PICK MODEL PROBABILITIES
 ----------------------------------------
-    player_name  overall_pick position_family  made_mlb_by_2024 draft_pick_only
-      Josh Jung             8              IF                 1           62.7%
-    Will Wilson            15              IF                 0           61.7%
-     Greg Jones            22              IF                 1           60.5%
-Adley Rutschman             1               C                 1           60.4%
-     Kody Hoese            25              IF                 0           60.0%
-Shea Langeliers             9               C                 1           59.0%
-  Andrew Vaughn             3              IF                 1           58.9%
-  Michael Busch            31              IF                 1           58.9%
-  Hunter Bishop            10              OF                 0           58.8%
-    J.J. Bleday             4              OF                 1           58.8%
+    player_name  overall_pick position_family  made_mlb_ever draft_pick_only
+  Hunter Bishop            10              OF              0           71.7%
+  Andrew Vaughn             3              IF              1           71.1%
+      Josh Jung             8              IF              1           70.4%
+Braden Shewmake            21              IF              1           70.0%
+   Bryson Stott            14              IF              1           69.5%
+ Logan Davidson            29              IF              1           68.8%
+  Michael Busch            31              IF              1           68.5%
+Adley Rutschman             1               C              1           68.4%
+    J.J. Bleday             4              OF              1           67.9%
+     Kody Hoese            25              IF              0           67.9%
 
 
 LOWEST DRAFT-PICK MODEL PROBABILITIES
 ----------------------------------------
-    player_name  overall_pick position_family  made_mlb_by_2024 draft_pick_only
-  Zack Plunkett           611               C                 0            1.2%
-Cameron Simmons           590              OF                 0            1.5%
-      Joe Davis           587              IF                 0            1.5%
-    Chris Givin           563              IF                 0            1.8%
-   Ashton McGee           553              IF                 0            2.0%
-      Jack Dunn           603              IF                 0            2.0%
-    Darius Hill           612              OF                 0            2.0%
- Aaron Antonini           545               C                 0            2.1%
-   Thomas Rowan           591               C                 0            2.2%
-   Matt O'Neill           598               C                 0            2.2%
+    player_name  overall_pick position_family  made_mlb_ever draft_pick_only
+    Jake Snider           604              OF              0            3.1%
+      Jack Dunn           603              IF              0            3.2%
+   Matt O'Neill           598               C              0            3.3%
+Andrew Navigato           592              IF              0            3.4%
+Cameron Simmons           590              OF              0            3.5%
+      Chad Bell           585              IF              0            3.7%
+    Darius Hill           612              OF              0            4.0%
+  Zack Plunkett           611               C              0            4.1%
+    Chris Givin           563              IF              0            4.2%
+Kerry Carpenter           562              OF              1            4.2%

@@ -28,7 +28,9 @@ required_columns = [
     "overall_pick",
     "college_PA",
     "college_OPS",
-    "made_mlb_by_2024",
+    "team_SOS",
+    "age_at_draft",
+    "made_mlb_ever",
 ]
 
 missing_columns = [
@@ -56,7 +58,9 @@ numeric_columns = [
     "college_ISO",
     "college_XBH_rate",
     "college_SB_success_rate",
-    "made_mlb_by_2024",
+    "team_SOS",
+    "age_at_draft",
+    "made_mlb_ever",
 ]
 
 for column in numeric_columns:
@@ -73,14 +77,20 @@ print(core_missing.to_string())
 if core_missing.sum() > 0:
     raise ValueError("Missing values found in core modeling columns.")
 
-if not df["made_mlb_by_2024"].isin([0, 1]).all():
+if not df["made_mlb_ever"].isin([0, 1]).all():
     raise ValueError(
         "Outcome column contains values other than 0 or 1."
     )
 
+if not df["team_SOS"].between(0, 1).all():
+    raise ValueError("team_SOS must be a numeric value between 0 and 1.")
+
+if not df["age_at_draft"].between(16, 50).all():
+    raise ValueError("age_at_draft contains values outside the expected range.")
+
 print("\nOutcome counts:")
 print(
-    df["made_mlb_by_2024"]
+    df["made_mlb_ever"]
     .value_counts()
     .sort_index()
     .to_string()
@@ -88,7 +98,7 @@ print(
 
 print(
     f"\nOverall MLB rate: "
-    f"{df['made_mlb_by_2024'].mean():.1%}"
+    f"{df['made_mlb_ever'].mean():.1%}"
 )
 
 print("\nPosition counts:")
@@ -109,7 +119,7 @@ low_pa = df[
         "overall_pick",
         "college_PA",
         "college_OPS",
-        "made_mlb_by_2024",
+        "made_mlb_ever",
     ]
 ].sort_values("college_PA")
 

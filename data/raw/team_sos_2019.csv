@@ -1,0 +1,300 @@
+season,source_team,team_SOS,team_SOS_rank,opponent_record,opponent_win_pct,source_url
+2019,Auburn,0.6008,1,2431-1431,0.6293,https://www.warrennolan.com/baseball/2019/sos
+2019,Vanderbilt,0.5899,2,2514-1588,0.6126,https://www.warrennolan.com/baseball/2019/sos
+2019,Florida,0.5855,3,2081-1331,0.6098,https://www.warrennolan.com/baseball/2019/sos
+2019,LSU,0.5841,4,2288-1479,0.6072,https://www.warrennolan.com/baseball/2019/sos
+2019,Oklahoma State,0.5835,5,2043-1331,0.6054,https://www.warrennolan.com/baseball/2019/sos
+2019,Ole Miss,0.5808,6,2331-1550,0.6004,https://www.warrennolan.com/baseball/2019/sos
+2019,Kentucky,0.5791,7,1931-1283,0.6006,https://www.warrennolan.com/baseball/2019/sos
+2019,Tennessee,0.5781,8,2113-1398,0.6016,https://www.warrennolan.com/baseball/2019/sos
+2019,Texas A&M,0.578,9,2168-1447,0.5997,https://www.warrennolan.com/baseball/2019/sos
+2019,Texas Tech,0.5773,10,2185-1488,0.5948,https://www.warrennolan.com/baseball/2019/sos
+2019,Duke,0.5744,11,2065-1347,0.6051,https://www.warrennolan.com/baseball/2019/sos
+2019,Arkansas,0.5743,12,2216-1519,0.5931,https://www.warrennolan.com/baseball/2019/sos
+2019,Georgia,0.5738,13,2155-1488,0.5914,https://www.warrennolan.com/baseball/2019/sos
+2019,Mississippi State,0.5737,14,2289-1544,0.5971,https://www.warrennolan.com/baseball/2019/sos
+2019,Alabama,0.5706,15,1926-1334,0.5907,https://www.warrennolan.com/baseball/2019/sos
+2019,Louisville,0.5694,16,2313-1586,0.5932,https://www.warrennolan.com/baseball/2019/sos
+2019,Georgia Tech,0.5678,17,2034-1455,0.5829,https://www.warrennolan.com/baseball/2019/sos
+2019,UCLA,0.5675,18,2011-1400,0.5893,https://www.warrennolan.com/baseball/2019/sos
+2019,USC,0.5641,19,1742-1223,0.5873,https://www.warrennolan.com/baseball/2019/sos
+2019,East Carolina,0.5625,20,2113-1512,0.5828,https://www.warrennolan.com/baseball/2019/sos
+2019,Miami (FL),0.5624,21,1974-1389,0.587,https://www.warrennolan.com/baseball/2019/sos
+2019,West Virginia,0.5603,22,1901-1400,0.5758,https://www.warrennolan.com/baseball/2019/sos
+2019,North Carolina,0.5603,23,2067-1552,0.5711,https://www.warrennolan.com/baseball/2019/sos
+2019,Virginia Tech,0.5603,24,1730-1263,0.578,https://www.warrennolan.com/baseball/2019/sos
+2019,Texas,0.5596,25,1735-1305,0.5707,https://www.warrennolan.com/baseball/2019/sos
+2019,Clemson,0.5586,26,1976-1465,0.5742,https://www.warrennolan.com/baseball/2019/sos
+2019,Oregon State,0.5571,27,1716-1303,0.5682,https://www.warrennolan.com/baseball/2019/sos
+2019,South Carolina,0.5561,28,1818-1375,0.5692,https://www.warrennolan.com/baseball/2019/sos
+2019,Missouri,0.5559,29,1834-1392,0.5685,https://www.warrennolan.com/baseball/2019/sos
+2019,Illinois State,0.5557,30,1960-1376,0.5875,https://www.warrennolan.com/baseball/2019/sos
+2019,Virginia,0.5554,31,1821-1332,0.5775,https://www.warrennolan.com/baseball/2019/sos
+2019,Kansas State,0.555,32,1792-1345,0.5712,https://www.warrennolan.com/baseball/2019/sos
+2019,Houston,0.5524,33,1771-1374,0.5631,https://www.warrennolan.com/baseball/2019/sos
+2019,Connecticut,0.5521,34,1981-1523,0.5653,https://www.warrennolan.com/baseball/2019/sos
+2019,Wichita State,0.5519,35,1845-1425,0.5642,https://www.warrennolan.com/baseball/2019/sos
+2019,Oregon,0.5514,36,1666-1267,0.5677,https://www.warrennolan.com/baseball/2019/sos
+2019,Pepperdine,0.5496,37,1490-1097,0.5759,https://www.warrennolan.com/baseball/2019/sos
+2019,Wake Forest,0.5491,38,1787-1390,0.5624,https://www.warrennolan.com/baseball/2019/sos
+2019,Nebraska,0.5483,39,1690-1304,0.5644,https://www.warrennolan.com/baseball/2019/sos
+2019,Florida State,0.5482,40,2021-1600,0.5581,https://www.warrennolan.com/baseball/2019/sos
+2019,Baylor,0.5477,41,1639-1283,0.5609,https://www.warrennolan.com/baseball/2019/sos
+2019,TCU,0.5473,42,1889-1496,0.558,https://www.warrennolan.com/baseball/2019/sos
+2019,Minnesota,0.5468,43,1643-1263,0.5653,https://www.warrennolan.com/baseball/2019/sos
+2019,North Carolina State,0.5468,44,1900-1479,0.5622,https://www.warrennolan.com/baseball/2019/sos
+2019,Stanford,0.546,45,1742-1378,0.5581,https://www.warrennolan.com/baseball/2019/sos
+2019,Notre Dame,0.5447,46,1690-1313,0.5627,https://www.warrennolan.com/baseball/2019/sos
+2019,Maryland,0.5445,47,1781-1374,0.5645,https://www.warrennolan.com/baseball/2019/sos
+2019,Boston College,0.5439,48,1789-1418,0.5578,https://www.warrennolan.com/baseball/2019/sos
+2019,Arizona,0.5436,49,1632-1296,0.5572,https://www.warrennolan.com/baseball/2019/sos
+2019,Xavier,0.5418,50,1760-1341,0.5676,https://www.warrennolan.com/baseball/2019/sos
+2019,Michigan,0.5406,51,2180-1741,0.556,https://www.warrennolan.com/baseball/2019/sos
+2019,California,0.5402,52,1535-1265,0.5481,https://www.warrennolan.com/baseball/2019/sos
+2019,Missouri State,0.5396,53,1663-1314,0.5586,https://www.warrennolan.com/baseball/2019/sos
+2019,UCF,0.5393,54,1736-1432,0.548,https://www.warrennolan.com/baseball/2019/sos
+2019,Utah,0.539,55,1429-1180,0.5476,https://www.warrennolan.com/baseball/2019/sos
+2019,Dallas Baptist,0.539,56,1831-1506,0.5487,https://www.warrennolan.com/baseball/2019/sos
+2019,Evansville,0.5372,57,1572-1290,0.5493,https://www.warrennolan.com/baseball/2019/sos
+2019,Indiana,0.5368,58,1774-1446,0.5509,https://www.warrennolan.com/baseball/2019/sos
+2019,Oklahoma,0.5367,59,1612-1381,0.5386,https://www.warrennolan.com/baseball/2019/sos
+2019,Cincinnati,0.5362,60,1874-1529,0.5507,https://www.warrennolan.com/baseball/2019/sos
+2019,Illinois,0.535,61,1685-1403,0.5456,https://www.warrennolan.com/baseball/2019/sos
+2019,Washington,0.5328,62,1472-1223,0.546,https://www.warrennolan.com/baseball/2019/sos
+2019,Loyola-Marymount,0.5326,63,1668-1401,0.5435,https://www.warrennolan.com/baseball/2019/sos
+2019,South Florida,0.5321,64,1586-1325,0.5448,https://www.warrennolan.com/baseball/2019/sos
+2019,Coastal Carolina,0.5318,65,1875-1607,0.5385,https://www.warrennolan.com/baseball/2019/sos
+2019,Washington State,0.5313,66,1525-1303,0.5392,https://www.warrennolan.com/baseball/2019/sos
+2019,Rice,0.5308,67,1699-1444,0.5405,https://www.warrennolan.com/baseball/2019/sos
+2019,FAU,0.5305,68,1828-1558,0.5398,https://www.warrennolan.com/baseball/2019/sos
+2019,San Diego State,0.5297,69,1566-1332,0.5402,https://www.warrennolan.com/baseball/2019/sos
+2019,Little Rock,0.5296,70,1661-1411,0.5407,https://www.warrennolan.com/baseball/2019/sos
+2019,Tulane,0.5296,71,1706-1466,0.5378,https://www.warrennolan.com/baseball/2019/sos
+2019,Long Beach State,0.5293,72,1571-1350,0.5378,https://www.warrennolan.com/baseball/2019/sos
+2019,Arizona State,0.5283,73,1578-1401,0.5296,https://www.warrennolan.com/baseball/2019/sos
+2019,Sam Houston State,0.5277,74,1643-1431,0.5345,https://www.warrennolan.com/baseball/2019/sos
+2019,Jacksonville,0.5267,75,1710-1417,0.5468,https://www.warrennolan.com/baseball/2019/sos
+2019,Michigan State,0.5262,76,1586-1345,0.5411,https://www.warrennolan.com/baseball/2019/sos
+2019,Georgia State,0.5241,77,1623-1414,0.5344,https://www.warrennolan.com/baseball/2019/sos
+2019,Southern Miss,0.5239,78,1780-1569,0.5315,https://www.warrennolan.com/baseball/2019/sos
+2019,Troy,0.5236,79,1733-1514,0.5337,https://www.warrennolan.com/baseball/2019/sos
+2019,Kansas,0.5223,80,1623-1462,0.5261,https://www.warrennolan.com/baseball/2019/sos
+2019,Louisiana Tech,0.5222,81,1695-1500,0.5305,https://www.warrennolan.com/baseball/2019/sos
+2019,Fresno State,0.5221,82,1536-1399,0.5233,https://www.warrennolan.com/baseball/2019/sos
+2019,Southeastern Louisiana,0.5217,83,1712-1509,0.5315,https://www.warrennolan.com/baseball/2019/sos
+2019,Memphis,0.5214,84,1611-1433,0.5292,https://www.warrennolan.com/baseball/2019/sos
+2019,Louisiana,0.5212,85,1683-1541,0.522,https://www.warrennolan.com/baseball/2019/sos
+2019,UTSA,0.5207,86,1611-1432,0.5293,https://www.warrennolan.com/baseball/2019/sos
+2019,Cal State Fullerton,0.5197,87,1473-1304,0.5304,https://www.warrennolan.com/baseball/2019/sos
+2019,Northwestern,0.5197,88,1412-1284,0.5237,https://www.warrennolan.com/baseball/2019/sos
+2019,Indiana State,0.5185,89,1747-1575,0.5259,https://www.warrennolan.com/baseball/2019/sos
+2019,ULM,0.5185,90,1668-1497,0.527,https://www.warrennolan.com/baseball/2019/sos
+2019,Pittsburgh,0.5184,91,1573-1421,0.5254,https://www.warrennolan.com/baseball/2019/sos
+2019,UAB,0.5183,92,1625-1454,0.5277,https://www.warrennolan.com/baseball/2019/sos
+2019,UNLV,0.5178,93,1508-1374,0.5231,https://www.warrennolan.com/baseball/2019/sos
+2019,Georgia Southern,0.5177,94,1689-1567,0.5187,https://www.warrennolan.com/baseball/2019/sos
+2019,Creighton,0.5168,95,1519-1387,0.5227,https://www.warrennolan.com/baseball/2019/sos
+2019,Texas State,0.5168,96,1585-1485,0.5163,https://www.warrennolan.com/baseball/2019/sos
+2019,FIU,0.5159,97,1577-1416,0.5268,https://www.warrennolan.com/baseball/2019/sos
+2019,North Florida,0.5151,98,1603-1417,0.5307,https://www.warrennolan.com/baseball/2019/sos
+2019,South Alabama,0.515,99,1594-1483,0.518,https://www.warrennolan.com/baseball/2019/sos
+2019,New Mexico,0.5149,100,1409-1284,0.5232,https://www.warrennolan.com/baseball/2019/sos
+2019,San Jose State,0.5147,101,1439-1325,0.5205,https://www.warrennolan.com/baseball/2019/sos
+2019,Campbell,0.5147,102,1670-1472,0.5315,https://www.warrennolan.com/baseball/2019/sos
+2019,Cal Poly,0.5139,103,1456-1356,0.5177,https://www.warrennolan.com/baseball/2019/sos
+2019,Liberty,0.5139,104,1727-1607,0.518,https://www.warrennolan.com/baseball/2019/sos
+2019,Air Force,0.5134,105,1417-1264,0.5285,https://www.warrennolan.com/baseball/2019/sos
+2019,Lamar,0.5133,106,1503-1382,0.521,https://www.warrennolan.com/baseball/2019/sos
+2019,Gonzaga,0.5128,107,1451-1381,0.5123,https://www.warrennolan.com/baseball/2019/sos
+2019,Maine,0.511,108,1352-1203,0.5292,https://www.warrennolan.com/baseball/2019/sos
+2019,Mercer,0.5107,109,1802-1635,0.5243,https://www.warrennolan.com/baseball/2019/sos
+2019,McNeese State,0.5101,110,1678-1572,0.5163,https://www.warrennolan.com/baseball/2019/sos
+2019,San Diego,0.5101,111,1412-1333,0.5144,https://www.warrennolan.com/baseball/2019/sos
+2019,Elon,0.5094,112,1575-1455,0.5198,https://www.warrennolan.com/baseball/2019/sos
+2019,Houston Baptist,0.509,113,1470-1380,0.5158,https://www.warrennolan.com/baseball/2019/sos
+2019,The Citadel,0.5086,114,1567-1439,0.5213,https://www.warrennolan.com/baseball/2019/sos
+2019,Old Dominion,0.5084,115,1516-1453,0.5106,https://www.warrennolan.com/baseball/2019/sos
+2019,UTA,0.5077,116,1589-1538,0.5081,https://www.warrennolan.com/baseball/2019/sos
+2019,William & Mary,0.5076,117,1496-1396,0.5173,https://www.warrennolan.com/baseball/2019/sos
+2019,Iowa,0.5066,118,1403-1371,0.5058,https://www.warrennolan.com/baseball/2019/sos
+2019,Stephen F. Austin,0.5064,119,1583-1501,0.5133,https://www.warrennolan.com/baseball/2019/sos
+2019,Kennesaw State,0.5062,120,1549-1454,0.5158,https://www.warrennolan.com/baseball/2019/sos
+2019,Appalachian State,0.5059,121,1462-1432,0.5052,https://www.warrennolan.com/baseball/2019/sos
+2019,Middle Tennessee,0.5055,122,1496-1453,0.5073,https://www.warrennolan.com/baseball/2019/sos
+2019,Rutgers,0.5049,123,1400-1309,0.5168,https://www.warrennolan.com/baseball/2019/sos
+2019,UMass,0.5044,124,1226-1122,0.5221,https://www.warrennolan.com/baseball/2019/sos
+2019,Northwestern State,0.5044,125,1469-1386,0.5145,https://www.warrennolan.com/baseball/2019/sos
+2019,Saint Mary's College,0.5041,126,1463-1453,0.5017,https://www.warrennolan.com/baseball/2019/sos
+2019,Nevada,0.5038,127,1424-1421,0.5005,https://www.warrennolan.com/baseball/2019/sos
+2019,Western Kentucky,0.5036,128,1527-1507,0.5033,https://www.warrennolan.com/baseball/2019/sos
+2019,Stetson,0.5031,129,1598-1531,0.5107,https://www.warrennolan.com/baseball/2019/sos
+2019,San Francisco,0.5029,130,1463-1440,0.504,https://www.warrennolan.com/baseball/2019/sos
+2019,BYU,0.5028,131,1349-1337,0.5022,https://www.warrennolan.com/baseball/2019/sos
+2019,Furman,0.5027,132,1557-1514,0.507,https://www.warrennolan.com/baseball/2019/sos
+2019,Southern Illinois,0.5021,133,1457-1421,0.5063,https://www.warrennolan.com/baseball/2019/sos
+2019,Jacksonville State,0.502,134,1697-1643,0.5081,https://www.warrennolan.com/baseball/2019/sos
+2019,Charlotte,0.5017,135,1436-1404,0.5056,https://www.warrennolan.com/baseball/2019/sos
+2019,UNCW,0.5017,136,1694-1638,0.5084,https://www.warrennolan.com/baseball/2019/sos
+2019,Rhode Island,0.5016,137,1426-1380,0.5082,https://www.warrennolan.com/baseball/2019/sos
+2019,Towson,0.5004,138,1436-1352,0.515,https://www.warrennolan.com/baseball/2019/sos
+2019,UNCG,0.4998,139,1431-1395,0.5064,https://www.warrennolan.com/baseball/2019/sos
+2019,Pacific,0.4996,140,1281-1239,0.5083,https://www.warrennolan.com/baseball/2019/sos
+2019,High Point,0.4994,141,1430-1381,0.5087,https://www.warrennolan.com/baseball/2019/sos
+2019,Cal State Northridge,0.4994,142,1450-1443,0.5012,https://www.warrennolan.com/baseball/2019/sos
+2019,Penn State,0.499,143,1309-1323,0.4973,https://www.warrennolan.com/baseball/2019/sos
+2019,Western Carolina,0.4985,144,1447-1417,0.5052,https://www.warrennolan.com/baseball/2019/sos
+2019,UC Riverside,0.4984,145,1455-1462,0.4988,https://www.warrennolan.com/baseball/2019/sos
+2019,Central Arkansas,0.4982,146,1534-1558,0.4961,https://www.warrennolan.com/baseball/2019/sos
+2019,Charleston,0.4982,147,1532-1533,0.4998,https://www.warrennolan.com/baseball/2019/sos
+2019,Bradley,0.4982,148,1158-1155,0.5006,https://www.warrennolan.com/baseball/2019/sos
+2019,UMass-Lowell,0.498,149,1478-1402,0.5132,https://www.warrennolan.com/baseball/2019/sos
+2019,Austin Peay,0.4975,150,1526-1497,0.5048,https://www.warrennolan.com/baseball/2019/sos
+2019,UC Santa Barbara,0.4972,151,1443-1487,0.4925,https://www.warrennolan.com/baseball/2019/sos
+2019,Arkansas State,0.497,152,1465-1483,0.497,https://www.warrennolan.com/baseball/2019/sos
+2019,Holy Cross,0.4965,153,1392-1320,0.5133,https://www.warrennolan.com/baseball/2019/sos
+2019,VCU,0.4964,154,1506-1477,0.5049,https://www.warrennolan.com/baseball/2019/sos
+2019,Purdue,0.4964,155,1404-1397,0.5012,https://www.warrennolan.com/baseball/2019/sos
+2019,Northeastern,0.4963,156,1494-1505,0.4982,https://www.warrennolan.com/baseball/2019/sos
+2019,Brown,0.4963,157,951-867,0.5231,https://www.warrennolan.com/baseball/2019/sos
+2019,Murray State,0.496,158,1416-1393,0.5041,https://www.warrennolan.com/baseball/2019/sos
+2019,VMI,0.4952,159,1543-1540,0.5005,https://www.warrennolan.com/baseball/2019/sos
+2019,Hofstra,0.4938,160,1375-1336,0.5072,https://www.warrennolan.com/baseball/2019/sos
+2019,Ohio State,0.4936,161,1653-1676,0.4965,https://www.warrennolan.com/baseball/2019/sos
+2019,Grand Canyon,0.4928,162,1567-1597,0.4953,https://www.warrennolan.com/baseball/2019/sos
+2019,Gardner-Webb,0.4927,163,1331-1343,0.4978,https://www.warrennolan.com/baseball/2019/sos
+2019,Texas A&M-Corpus Christi,0.4915,164,1435-1476,0.493,https://www.warrennolan.com/baseball/2019/sos
+2019,Santa Clara,0.4913,165,1311-1372,0.4887,https://www.warrennolan.com/baseball/2019/sos
+2019,Radford,0.4908,166,1456-1508,0.4912,https://www.warrennolan.com/baseball/2019/sos
+2019,Abilene Christian,0.4902,167,1295-1322,0.4948,https://www.warrennolan.com/baseball/2019/sos
+2019,UC Irvine,0.4899,168,1344-1454,0.4804,https://www.warrennolan.com/baseball/2019/sos
+2019,New Orleans,0.4893,169,1423-1499,0.487,https://www.warrennolan.com/baseball/2019/sos
+2019,Ohio,0.489,170,1434-1384,0.5089,https://www.warrennolan.com/baseball/2019/sos
+2019,Saint John's,0.4884,171,1360-1384,0.4956,https://www.warrennolan.com/baseball/2019/sos
+2019,Samford,0.4882,172,1562-1662,0.4845,https://www.warrennolan.com/baseball/2019/sos
+2019,Nicholls State,0.4877,173,1393-1446,0.4907,https://www.warrennolan.com/baseball/2019/sos
+2019,Yale,0.4875,174,945-948,0.4992,https://www.warrennolan.com/baseball/2019/sos
+2019,Incarnate Word,0.4868,175,1478-1565,0.4857,https://www.warrennolan.com/baseball/2019/sos
+2019,Utah Valley,0.4867,176,1433-1442,0.4984,https://www.warrennolan.com/baseball/2019/sos
+2019,North Alabama,0.4867,177,1411-1474,0.4891,https://www.warrennolan.com/baseball/2019/sos
+2019,Columbia,0.4866,178,932-943,0.4971,https://www.warrennolan.com/baseball/2019/sos
+2019,Winthrop,0.4861,179,1434-1524,0.4848,https://www.warrennolan.com/baseball/2019/sos
+2019,Tennessee-Martin,0.4852,180,1374-1421,0.4916,https://www.warrennolan.com/baseball/2019/sos
+2019,Richmond,0.4848,181,1399-1427,0.4951,https://www.warrennolan.com/baseball/2019/sos
+2019,Valparaiso,0.4845,182,1258-1371,0.4785,https://www.warrennolan.com/baseball/2019/sos
+2019,Seattle University,0.4845,183,1287-1322,0.4933,https://www.warrennolan.com/baseball/2019/sos
+2019,Presbyterian College,0.4839,184,1467-1565,0.4838,https://www.warrennolan.com/baseball/2019/sos
+2019,Lipscomb,0.4838,185,1418-1519,0.4828,https://www.warrennolan.com/baseball/2019/sos
+2019,Wofford,0.4837,186,1554-1661,0.4834,https://www.warrennolan.com/baseball/2019/sos
+2019,Belmont,0.4836,187,1481-1553,0.4881,https://www.warrennolan.com/baseball/2019/sos
+2019,UTRGV,0.4826,188,1394-1468,0.4871,https://www.warrennolan.com/baseball/2019/sos
+2019,Portland,0.4822,189,1234-1344,0.4787,https://www.warrennolan.com/baseball/2019/sos
+2019,James Madison,0.4822,190,1433-1541,0.4819,https://www.warrennolan.com/baseball/2019/sos
+2019,Hartford,0.482,191,1392-1444,0.4908,https://www.warrennolan.com/baseball/2019/sos
+2019,Delaware,0.482,192,1310-1375,0.4879,https://www.warrennolan.com/baseball/2019/sos
+2019,UNC Asheville,0.4817,193,1329-1421,0.4833,https://www.warrennolan.com/baseball/2019/sos
+2019,Youngstown State,0.4816,194,1358-1389,0.4944,https://www.warrennolan.com/baseball/2019/sos
+2019,Saint Louis,0.4814,195,1339-1398,0.4893,https://www.warrennolan.com/baseball/2019/sos
+2019,FGCU,0.4812,196,1385-1514,0.4778,https://www.warrennolan.com/baseball/2019/sos
+2019,Dayton,0.4812,197,1522-1547,0.4959,https://www.warrennolan.com/baseball/2019/sos
+2019,Sacramento State,0.4811,198,1618-1680,0.4906,https://www.warrennolan.com/baseball/2019/sos
+2019,Marshall,0.4804,199,1429-1599,0.472,https://www.warrennolan.com/baseball/2019/sos
+2019,Cornell,0.4799,200,833-841,0.4976,https://www.warrennolan.com/baseball/2019/sos
+2019,Lafayette,0.4798,201,1288-1303,0.4971,https://www.warrennolan.com/baseball/2019/sos
+2019,Northern Illinois,0.4797,202,1395-1465,0.4878,https://www.warrennolan.com/baseball/2019/sos
+2019,Eastern Illinois,0.4788,203,1343-1421,0.4859,https://www.warrennolan.com/baseball/2019/sos
+2019,SIUE,0.4786,204,1278-1396,0.4779,https://www.warrennolan.com/baseball/2019/sos
+2019,Bethune-Cookman,0.4779,205,1345-1434,0.484,https://www.warrennolan.com/baseball/2019/sos
+2019,Davidson,0.4775,206,1271-1366,0.482,https://www.warrennolan.com/baseball/2019/sos
+2019,Morehead State,0.4765,207,1518-1642,0.4804,https://www.warrennolan.com/baseball/2019/sos
+2019,George Mason,0.4764,208,1366-1442,0.4865,https://www.warrennolan.com/baseball/2019/sos
+2019,Hawaii,0.4754,209,1210-1373,0.4684,https://www.warrennolan.com/baseball/2019/sos
+2019,UC Davis,0.475,210,1183-1353,0.4665,https://www.warrennolan.com/baseball/2019/sos
+2019,Harvard,0.4735,211,929-1004,0.4806,https://www.warrennolan.com/baseball/2019/sos
+2019,South Carolina Upstate,0.473,212,1306-1473,0.47,https://www.warrennolan.com/baseball/2019/sos
+2019,Northern Kentucky,0.4729,213,1334-1449,0.4794,https://www.warrennolan.com/baseball/2019/sos
+2019,Bryant,0.4719,214,1415-1580,0.4725,https://www.warrennolan.com/baseball/2019/sos
+2019,Kent State,0.4717,215,1312-1463,0.4729,https://www.warrennolan.com/baseball/2019/sos
+2019,Tennessee Tech,0.4703,216,1351-1515,0.4714,https://www.warrennolan.com/baseball/2019/sos
+2019,Oakland,0.4695,217,1157-1262,0.4783,https://www.warrennolan.com/baseball/2019/sos
+2019,Charleston Southern,0.4687,218,1410-1637,0.4628,https://www.warrennolan.com/baseball/2019/sos
+2019,Cal State Bakersfield,0.4686,219,1438-1600,0.4734,https://www.warrennolan.com/baseball/2019/sos
+2019,Quinnipiac,0.4681,220,1464-1589,0.4795,https://www.warrennolan.com/baseball/2019/sos
+2019,Villanova,0.4677,221,1222-1376,0.4704,https://www.warrennolan.com/baseball/2019/sos
+2019,Georgetown,0.4675,222,1339-1491,0.4732,https://www.warrennolan.com/baseball/2019/sos
+2019,California Baptist,0.4674,223,1323-1515,0.4662,https://www.warrennolan.com/baseball/2019/sos
+2019,Binghamton,0.4663,224,1193-1356,0.468,https://www.warrennolan.com/baseball/2019/sos
+2019,Oral Roberts,0.4663,225,1243-1376,0.4747,https://www.warrennolan.com/baseball/2019/sos
+2019,East Tennessee State,0.4654,226,1325-1580,0.4562,https://www.warrennolan.com/baseball/2019/sos
+2019,Eastern Kentucky,0.4653,227,1423-1636,0.4652,https://www.warrennolan.com/baseball/2019/sos
+2019,Toledo,0.4653,228,1311-1455,0.474,https://www.warrennolan.com/baseball/2019/sos
+2019,Texas Southern,0.4651,229,1161-1253,0.4809,https://www.warrennolan.com/baseball/2019/sos
+2019,Eastern Michigan,0.4649,230,1274-1447,0.4682,https://www.warrennolan.com/baseball/2019/sos
+2019,Marist,0.4647,231,1307-1439,0.476,https://www.warrennolan.com/baseball/2019/sos
+2019,Siena,0.4644,232,1269-1427,0.4707,https://www.warrennolan.com/baseball/2019/sos
+2019,Army,0.4643,233,1377-1597,0.4631,https://www.warrennolan.com/baseball/2019/sos
+2019,New Mexico State,0.4642,234,1298-1492,0.4653,https://www.warrennolan.com/baseball/2019/sos
+2019,NJIT,0.464,235,1113-1285,0.4642,https://www.warrennolan.com/baseball/2019/sos
+2019,Saint Bonaventure,0.4638,236,1073-1185,0.4753,https://www.warrennolan.com/baseball/2019/sos
+2019,Saint Joseph's,0.4635,237,1175-1339,0.4674,https://www.warrennolan.com/baseball/2019/sos
+2019,Seton Hall,0.4633,238,1234-1465,0.4573,https://www.warrennolan.com/baseball/2019/sos
+2019,Wright State,0.4622,239,1313-1556,0.4577,https://www.warrennolan.com/baseball/2019/sos
+2019,Ball State,0.4619,240,1314-1540,0.4605,https://www.warrennolan.com/baseball/2019/sos
+2019,Western Michigan,0.4612,241,1161-1360,0.4606,https://www.warrennolan.com/baseball/2019/sos
+2019,Northern Colorado,0.461,242,1022-1201,0.4597,https://www.warrennolan.com/baseball/2019/sos
+2019,Southeast Missouri,0.4609,243,1272-1502,0.4586,https://www.warrennolan.com/baseball/2019/sos
+2019,Stony Brook,0.4608,244,1255-1491,0.4571,https://www.warrennolan.com/baseball/2019/sos
+2019,Princeton,0.4605,245,816-968,0.4574,https://www.warrennolan.com/baseball/2019/sos
+2019,Canisius,0.4591,246,1253-1483,0.4581,https://www.warrennolan.com/baseball/2019/sos
+2019,Florida A&M,0.4575,247,1370-1570,0.4661,https://www.warrennolan.com/baseball/2019/sos
+2019,Longwood,0.4567,248,1228-1470,0.4552,https://www.warrennolan.com/baseball/2019/sos
+2019,Sacred Heart,0.4566,249,1274-1480,0.4627,https://www.warrennolan.com/baseball/2019/sos
+2019,UIC,0.4563,250,1153-1399,0.4519,https://www.warrennolan.com/baseball/2019/sos
+2019,Wagner,0.4547,251,1181-1377,0.4618,https://www.warrennolan.com/baseball/2019/sos
+2019,Central Connecticut,0.4544,252,1230-1443,0.4602,https://www.warrennolan.com/baseball/2019/sos
+2019,Dartmouth,0.454,253,745-947,0.4404,https://www.warrennolan.com/baseball/2019/sos
+2019,Penn,0.4527,254,825-996,0.4532,https://www.warrennolan.com/baseball/2019/sos
+2019,North Carolina A&T,0.4524,255,1185-1404,0.4578,https://www.warrennolan.com/baseball/2019/sos
+2019,Fordham,0.4515,256,1401-1765,0.4428,https://www.warrennolan.com/baseball/2019/sos
+2019,Chicago State,0.4503,257,1161-1447,0.4452,https://www.warrennolan.com/baseball/2019/sos
+2019,Milwaukee,0.4501,258,1134-1425,0.4431,https://www.warrennolan.com/baseball/2019/sos
+2019,Long Island,0.4501,259,1222-1472,0.4538,https://www.warrennolan.com/baseball/2019/sos
+2019,Bowling Green,0.4501,260,1138-1418,0.4454,https://www.warrennolan.com/baseball/2019/sos
+2019,Central Michigan,0.45,261,1286-1625,0.4419,https://www.warrennolan.com/baseball/2019/sos
+2019,Bucknell,0.4481,262,1050-1296,0.4476,https://www.warrennolan.com/baseball/2019/sos
+2019,Manhattan,0.4475,263,1376-1689,0.4491,https://www.warrennolan.com/baseball/2019/sos
+2019,South Dakota State,0.4474,264,1031-1293,0.4438,https://www.warrennolan.com/baseball/2019/sos
+2019,Western Illinois,0.4462,265,1066-1312,0.4484,https://www.warrennolan.com/baseball/2019/sos
+2019,La Salle,0.445,266,1240-1550,0.4445,https://www.warrennolan.com/baseball/2019/sos
+2019,North Carolina Central,0.4441,267,1057-1331,0.4428,https://www.warrennolan.com/baseball/2019/sos
+2019,Iona,0.4438,268,1214-1492,0.4487,https://www.warrennolan.com/baseball/2019/sos
+2019,George Washington,0.4421,269,1156-1542,0.4285,https://www.warrennolan.com/baseball/2019/sos
+2019,UMBC,0.4416,270,1154-1494,0.4358,https://www.warrennolan.com/baseball/2019/sos
+2019,Arkansas-Pine Bluff,0.4414,271,1117-1377,0.4479,https://www.warrennolan.com/baseball/2019/sos
+2019,Saint Peter's,0.4387,272,1160-1460,0.443,https://www.warrennolan.com/baseball/2019/sos
+2019,Miami (OH),0.4383,273,1206-1631,0.4252,https://www.warrennolan.com/baseball/2019/sos
+2019,Savannah State,0.4383,274,865-1129,0.4338,https://www.warrennolan.com/baseball/2019/sos
+2019,North Dakota State,0.438,275,865-1089,0.4429,https://www.warrennolan.com/baseball/2019/sos
+2019,Omaha,0.4358,276,1078-1469,0.4233,https://www.warrennolan.com/baseball/2019/sos
+2019,Navy,0.4355,277,1121-1513,0.4256,https://www.warrennolan.com/baseball/2019/sos
+2019,Fairfield,0.4351,278,1272-1694,0.4291,https://www.warrennolan.com/baseball/2019/sos
+2019,Southern,0.4348,279,1152-1505,0.4336,https://www.warrennolan.com/baseball/2019/sos
+2019,Niagara,0.4311,280,1017-1395,0.4219,https://www.warrennolan.com/baseball/2019/sos
+2019,Albany,0.4303,281,1058-1482,0.4166,https://www.warrennolan.com/baseball/2019/sos
+2019,Butler,0.4297,282,1046-1498,0.4112,https://www.warrennolan.com/baseball/2019/sos
+2019,Monmouth,0.4292,283,1213-1669,0.421,https://www.warrennolan.com/baseball/2019/sos
+2019,Purdue Fort Wayne,0.426,284,1008-1362,0.4255,https://www.warrennolan.com/baseball/2019/sos
+2019,Prairie View A&M,0.4258,285,932-1230,0.4311,https://www.warrennolan.com/baseball/2019/sos
+2019,Lehigh,0.4255,286,1000-1415,0.4142,https://www.warrennolan.com/baseball/2019/sos
+2019,Rider,0.4237,287,1122-1593,0.4135,https://www.warrennolan.com/baseball/2019/sos
+2019,Norfolk State,0.4228,288,957-1326,0.4194,https://www.warrennolan.com/baseball/2019/sos
+2019,Jackson State,0.4206,289,956-1218,0.4397,https://www.warrennolan.com/baseball/2019/sos
+2019,Grambling,0.4196,290,988-1343,0.4239,https://www.warrennolan.com/baseball/2019/sos
+2019,Fairleigh Dickinson,0.4185,291,1067-1520,0.4126,https://www.warrennolan.com/baseball/2019/sos
+2019,Delaware State,0.4156,292,836-1226,0.4055,https://www.warrennolan.com/baseball/2019/sos
+2019,Maryland Eastern Shore,0.4145,293,1048-1472,0.4159,https://www.warrennolan.com/baseball/2019/sos
+2019,Alabama State,0.4118,294,1050-1449,0.4202,https://www.warrennolan.com/baseball/2019/sos
+2019,Alabama A&M,0.4087,295,1005-1408,0.4165,https://www.warrennolan.com/baseball/2019/sos
+2019,Mississippi Valley State,0.405,296,585-834,0.4123,https://www.warrennolan.com/baseball/2019/sos
+2019,Mount Saint Mary's,0.3983,297,942-1505,0.3854,https://www.warrennolan.com/baseball/2019/sos
+2019,Coppin State,0.397,298,813-1289,0.3872,https://www.warrennolan.com/baseball/2019/sos
+2019,Alcorn State,0.3832,299,750-1170,0.3906,https://www.warrennolan.com/baseball/2019/sos

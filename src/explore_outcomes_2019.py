@@ -10,8 +10,8 @@ REPORT_PATH = REPORT_DIR / "outcome_exploration_2019.txt"
 
 df = pd.read_csv(DATA_PATH)
 
-df["made_mlb_by_2024"] = pd.to_numeric(
-    df["made_mlb_by_2024"]
+df["made_mlb_ever"] = pd.to_numeric(
+    df["made_mlb_ever"]
 )
 
 df["overall_pick"] = pd.to_numeric(
@@ -59,8 +59,8 @@ def outcome_table(group_column):
         df.groupby(group_column, dropna=False)
         .agg(
             players=("player_name", "size"),
-            mlb_players=("made_mlb_by_2024", "sum"),
-            mlb_rate=("made_mlb_by_2024", "mean"),
+            mlb_players=("made_mlb_ever", "sum"),
+            mlb_rate=("made_mlb_ever", "mean"),
             average_PA=("college_PA", "mean"),
             median_OPS=("college_OPS", "median"),
         )
@@ -72,7 +72,7 @@ by_position = outcome_table("position_family")
 by_pick_bin = outcome_table("pick_bin")
 
 by_outcome = (
-    df.groupby("made_mlb_by_2024")
+    df.groupby("made_mlb_ever")
     .agg(
         players=("player_name", "size"),
         average_PA=("college_PA", "mean"),
@@ -98,7 +98,7 @@ low_pa = df[
         "overall_pick",
         "college_PA",
         "college_OPS",
-        "made_mlb_by_2024",
+        "made_mlb_ever",
     ]
 ].sort_values("college_PA")
 
@@ -119,12 +119,12 @@ report.append("=" *  thirty if False else "=" * 30)
 report.append("")
 report.append(f"Total players: {len(df)}")
 report.append(
-    f"MLB players by 2024: "
-    f"{int(df['made_mlb_by_2024'].sum())}"
+    f"Players who reached MLB by check date: "
+    f"{int(df['made_mlb_ever'].sum())}"
 )
 report.append(
-    f"Overall MLB rate: "
-    f"{df['made_mlb_by_2024'].mean():.1%}"
+    f"Overall reach rate: "
+    f"{df['made_mlb_ever'].mean():.1%}"
 )
 
 report.append("\nOUTCOMES BY DRAFT ROUND")

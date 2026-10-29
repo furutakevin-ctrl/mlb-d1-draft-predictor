@@ -44,14 +44,14 @@ if pilot["player_key"].duplicated().any():
 pilot_labels = pilot[
     [
         "player_key",
-        "made_mlb_by_2024",
+        "made_mlb_ever",
         "mlb_debut_year",
         "source_outcome",
     ]
 ].copy()
 
-pilot_labels["made_mlb_by_2024"] = pd.to_numeric(
-    pilot_labels["made_mlb_by_2024"],
+pilot_labels["made_mlb_ever"] = pd.to_numeric(
+    pilot_labels["made_mlb_ever"],
     errors="raise",
 )
 
@@ -72,7 +72,7 @@ joined = master.merge(
 )
 
 joined["pilot_outcome_available"] = (
-    joined["made_mlb_by_2024"].notna().astype(int)
+    joined["made_mlb_ever"].notna().astype(int)
 )
 
 OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -88,7 +88,7 @@ print(
     "Outcome distribution among pilot players:",
     joined.loc[
         joined["pilot_outcome_available"] == 1,
-        "made_mlb_by_2024",
+        "made_mlb_ever",
     ].value_counts().to_dict(),
 )
 print(f"Created: {OUTPUT_PATH}")

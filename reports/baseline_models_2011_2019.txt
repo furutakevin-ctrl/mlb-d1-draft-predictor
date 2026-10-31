@@ -1,0 +1,44 @@
+2011-2019 BASELINE MODEL COMPARISON
+======================================
+
+Players: 1401
+Positive outcomes: 375
+Overall MLB rate: 26.8%
+
+Rows and outcomes by draft year:
+ draft_year  players  positive_outcomes  mlb_rate
+       2011      126                 36    0.2857
+       2012      141                 36    0.2553
+       2013      150                 39    0.2600
+       2014      145                 28    0.1931
+       2015      167                 44    0.2635
+       2016      167                 46    0.2754
+       2017      154                 41    0.2662
+       2018      166                 46    0.2771
+       2019      185                 59    0.3189
+
+Constant-probability baseline:
+Brier score: 0.1960
+
+Stratified 5-fold cross-validated results:
+                          model  roc_auc  average_precision  brier_score  log_loss
+                draft_pick_only   0.7643             0.6023       0.1581    0.4912
+       draft_pick_plus_position   0.7632             0.5931       0.1583    0.4922
+        draft_pick_plus_college   0.7651             0.5927       0.1574    0.4908
+    draft_pick_plus_college_sos   0.7646             0.5905       0.1574    0.4905
+    draft_pick_plus_college_age   0.7740             0.5879       0.1552    0.4823
+draft_pick_plus_college_age_sos   0.7743             0.5864       0.1550    0.4816
+             college_stats_only   0.6064             0.3725       0.1900    0.5669
+         college_stats_plus_sos   0.6387             0.4087       0.1857    0.5562
+         college_stats_plus_age   0.6882             0.4578       0.1780    0.5372
+     college_stats_plus_age_sos   0.7059             0.4829       0.1742    0.5268
+
+Metric meanings:
+ROC-AUC: ranking quality; higher is better.
+Average precision: positive-class ranking; higher is better.
+Brier score: probability accuracy; lower is better.
+Log loss: probability penalty; lower is better.
+
+Validation note:
+Random folds contain players from all draft years; these metrics describe pooled cross-validation, not a future-year holdout.
+The made_mlb_ever outcome has different follow-up lengths by draft year; review the year-level rates above.

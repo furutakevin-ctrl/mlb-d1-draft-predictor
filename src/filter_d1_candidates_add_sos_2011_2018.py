@@ -6,6 +6,8 @@ non-D1 schools or naming variants; they are not silently discarded.
 """
 
 from pathlib import Path
+from datetime import datetime
+import shutil
 import re
 import unicodedata
 
@@ -19,6 +21,7 @@ CANDIDATES_PATH = PROJECT_ROOT / "data" / "raw" / "draft_candidates_2011_2018.cs
 SOS_OUTPUT_PATH = PROJECT_ROOT / "data" / "raw" / "team_sos_2011_2018.csv"
 MATCHED_OUTPUT_PATH = PROJECT_ROOT / "data" / "processed" / "d1_position_candidates_2011_2018.csv"
 UNMATCHED_OUTPUT_PATH = PROJECT_ROOT / "data" / "processed" / "d1_school_match_review_2011_2018.csv"
+EXCLUDED_OUTPUT_PATH = PROJECT_ROOT / "data" / "processed" / "d1_cohort_exclusions_2011_2018.csv"
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; mlb-d1-draft-predictor/1.0)"}
 
@@ -116,6 +119,54 @@ SCHOOL_ALIASES = {
     "nebraskalincoln": ["nebraska"],
     "universityofnebraskalincoln": ["nebraska"],
     "sunybinghamton": ["binghamton"],
+    "usmilitaryacademy": ["army", "unitedstatesmilitaryacademy", "westpoint", "usma"],
+    "unitedstatesmilitaryacademy": ["army", "usmilitaryacademy", "westpoint", "usma"],
+    "usnavalacademy": ["navy", "unitedstatesnavalacademy", "annapolis", "usna"],
+    "unitedstatesnavalacademy": ["navy", "usnavalacademy", "annapolis", "usna"],
+    "usairforceacademy": ["airforce", "unitedstatesairforceacademy", "usafa"],
+    "unitedstatesairforceacademy": ["airforce", "usairforceacademy", "usafa"],
+}
+
+# The MLB draft feed's school/position fields are incorrect for these
+# candidates. Keep their raw draft records, but exclude them from this
+# D1 position-player cohort based on the verified draft-season school or role.
+COHORT_EXCLUSIONS = {
+    (2012, "yoenny gonzalez"): {
+        "verified_college": "College of Central Florida",
+        "verified_division": "NJCAA",
+        "reason": "Draft feed says Central Florida, but player history identifies College of Central Florida (NJCAA), not UCF.",
+        "verification_sources": "https://thebaseballcube.com/content/player/171321/; https://thebaseballcube.com/content/stats_college/2024~20208/",
+    },
+    (2012, "melvin mercedes"): {
+        "verified_college": "College of Central Florida",
+        "verified_division": "NJCAA",
+        "reason": "Draft feed says Central Florida, but player history identifies College of Central Florida (NJCAA), not UCF.",
+        "verification_sources": "https://thebaseballcube.com/content/player/171322/; https://thebaseballcube.com/content/stats_college/2024~20208/",
+    },
+    (2012, "terrell joyce"): {
+        "verified_college": "Florida State College at Jacksonville",
+        "verified_division": "NJCAA",
+        "reason": "Draft feed says Florida State; verified school is Florida State College at Jacksonville (NJCAA).",
+        "verification_sources": "https://www.baseball-reference.com/register/player.fcgi?id=joyce-000ter; https://www.thebaseballcube.com/content/college_alumni/21987/",
+    },
+    (2015, "ryan uhl"): {
+        "verified_college": "Indiana University of Pennsylvania",
+        "verified_division": "NCAA Division II",
+        "reason": "Draft feed says Indiana; verified school is Indiana University of Pennsylvania (NCAA Division II).",
+        "verification_sources": "https://www.thebaseballcube.com/content/player/197424/",
+    },
+    (2016, "shane carrier"): {
+        "verified_college": "Fullerton College",
+        "verified_division": "NJCAA",
+        "reason": "Draft feed says Cal State Fullerton; verified school is Fullerton College (junior college/NJCAA).",
+        "verification_sources": "https://www.milb.com/player/shane-carrier-669427; https://thebaseballcube.com/content/college_alumni/20330/",
+    },
+    (2011, "jack armstrong"): {
+        "verified_college": "Vanderbilt University",
+        "verified_division": "NCAA Division I; pitcher",
+        "reason": "Draft records identify Armstrong as a right-handed pitcher; excluded from the position-player cohort despite the MLB Stats API 1B label.",
+        "verification_sources": "https://www.baseball-reference.com/draft/index.fcgi?draft_type=junreg&query_type=franch_year&team_ID=HOU&year_ID=2011; https://vucommodores.com/sports/baseball/roster/player/jack-armstrong",
+    },
 }
 
 
@@ -276,6 +327,22 @@ def main():
     position_players["position_source_note"] = (
         "MLB Stats API pick/person position; verify against draft-day position before final inclusion"
     )
+    excluded_rows = []
+    keep_mask = []
+    for _, candidate in position_players.iterrows():
+        exclusion = COHORT_EXCLUSIONS.get(
+            (int(candidate["draft_year"]), str(candidate["player_name"]).strip().lower())
+        )
+        keep_mask.append(exclusion is None)
+        if exclusion is not None:
+            excluded_rows.append({**candidate.to_dict(), **exclusion})
+    position_players = position_players.loc[keep_mask].copy()
+    if MATCHED_OUTPUT_PATH.exists():
+        backup_path = MATCHED_OUTPUT_PATH.with_name(
+            f"{MATCHED_OUTPUT_PATH.stem}.before_cohort_audit_{datetime.now().strftime('%Y%m%d_%H%M%S')}{MATCHED_OUTPUT_PATH.suffix}"
+        )
+        shutil.copy2(MATCHED_OUTPUT_PATH, backup_path)
+        print(f"Previous matched candidate file backed up: {backup_path}")
     sos_tables = []
     matched_parts = []
     unmatched_parts = []
@@ -319,14 +386,18 @@ def main():
     all_sos = pd.concat(sos_tables, ignore_index=True)
     all_matched = pd.concat(matched_parts, ignore_index=True)
     all_unmatched = pd.concat(unmatched_parts, ignore_index=True)
+    all_excluded = pd.DataFrame(excluded_rows)
     SOS_OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     MATCHED_OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     all_sos.to_csv(SOS_OUTPUT_PATH, index=False)
     all_matched.to_csv(MATCHED_OUTPUT_PATH, index=False)
     all_unmatched.to_csv(UNMATCHED_OUTPUT_PATH, index=False)
+    EXCLUDED_OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    all_excluded.to_csv(EXCLUDED_OUTPUT_PATH, index=False)
     print(f"\nSOS rows saved: {len(all_sos)} -> {SOS_OUTPUT_PATH}")
     print(f"Matched candidates saved: {len(all_matched)} -> {MATCHED_OUTPUT_PATH}")
     print(f"School names for review: {all_unmatched['college'].nunique()} unique, {len(all_unmatched)} players -> {UNMATCHED_OUTPUT_PATH}")
+    print(f"Verified cohort exclusions (school/role): {len(all_excluded)} -> {EXCLUDED_OUTPUT_PATH}")
     print("Review unmatched schools before treating the matched file as the complete D1 cohort.")
     print("The position field comes from the MLB Stats API record and still needs draft-day verification.")
 

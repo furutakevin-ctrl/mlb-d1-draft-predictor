@@ -1,0 +1,46 @@
+NO-DRAFT-POSITION VALUE MODEL COMPARISON, 2011-2019
+======================================================
+
+Players: 1401
+Positive outcomes: 375 (26.8%)
+Model inputs exclude overall_pick and draft_round.
+Later-half status is used only for evaluation and inner-fold weight selection.
+
+College stat emphasis factors tested after standardization:
+0.5, 1, 1.5, 2, 3
+
+Model metrics:
+                              model               evaluation_group    n  positives  roc_auc  average_precision  brier_score  log_loss  top_10pct_mlb_rate  top_10pct_lift  top_10pct_recall
+  college_age_sos_no_position_equal                 all_candidates 1401        375   0.7059             0.4829       0.1742    0.5268              0.5532          2.0667            0.2080
+  college_age_sos_no_position_equal later_half_by_pick_within_year  703         87   0.6045             0.2177       0.1201    0.4031              0.2113          1.7071            0.1724
+college_age_sos_with_position_equal                 all_candidates 1401        375   0.7034             0.4724       0.1750    0.5279              0.5532          2.0667            0.2080
+college_age_sos_with_position_equal later_half_by_pick_within_year  703         87   0.6026             0.2033       0.1214    0.4048              0.1690          1.3657            0.1379
+  college_age_sos_no_position_tuned                 all_candidates 1401        375   0.7059             0.4832       0.1742    0.5268              0.5532          2.0667            0.2080
+  college_age_sos_no_position_tuned later_half_by_pick_within_year  703         87   0.6045             0.2179       0.1201    0.4031              0.1972          1.5933            0.1609
+college_age_sos_with_position_tuned                 all_candidates 1401        375   0.7032             0.4722       0.1750    0.5280              0.5461          2.0402            0.2053
+college_age_sos_with_position_tuned later_half_by_pick_within_year  703         87   0.6019             0.2029       0.1214    0.4049              0.1690          1.3657            0.1379
+
+Selected college-stat weight by outer fold for tuned models:
+college_age_sos_no_position_tuned: 3, 1, 1.5, 3, 1
+college_age_sos_with_position_tuned: 0.5, 1.5, 0.5, 0.5, 1
+
+Draft-year coverage:
+ draft_year  players  positive_outcomes  later_half_players
+       2011      126                 36                  63
+       2012      141                 36                  71
+       2013      150                 39                  75
+       2014      145                 28                  73
+       2015      167                 44                  84
+       2016      167                 46                  84
+       2017      154                 41                  77
+       2018      166                 46                  83
+       2019      185                 59                  93
+
+How to read the later-pick metrics:
+Within each draft year, later-half candidates are the half with higher overall_pick values.
+The model does not receive overall_pick. Top-10% rate and lift show whether its highest-ranked later picks outperform the later-half base rate.
+
+Validation note:
+Weight selection uses inner-fold average precision among later picks; reported model performance uses outer-fold predictions.
+Outer folds randomly mix draft years, so this estimates pooled performance, not performance on a future draft class.
+The cohort remains provisional while school-match review rows are unresolved.

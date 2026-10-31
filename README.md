@@ -59,9 +59,9 @@ The four players with fewer than 100 college plate appearances are retained but 
 
 ## Current data status
 
-The 2019 outcome and baseline-model pipeline has been rerun with the `made_mlb_ever` definition; the latest run has 59 positive outcomes among 185 players. Record the outcome check date for each refresh because recent draft classes have had less time to reach MLB.
+The 2011–2018 first-20-round draft roster contains 4,817 source candidates. The current provisional D1 position-player cohort has 1,216 rows after school/SOS matching and cohort corrections. Another 970 school/player review records remain outside this cohort; they may include non-D1 schools, high schools, junior colleges, or school-name variants. Do not treat the provisional cohort as the finalized D1 population. The current position field comes from the MLB Stats API and still needs draft-day verification.
 
-For 2011–2018, the first-20-round draft candidate roster and annual SOS source tables have been collected. The current pass matched 1,220 candidates to a D1 SOS table and left 972 school/player records for review. These are provisional counts: unmatched schools include high schools, junior colleges, non-D1 programs, and possible naming variants. The current-position field comes from the MLB Stats API and must be checked against draft-day position. College statistics, ages, and MLB outcome labels for these years have not yet been collected and finalized.
+College statistics, ages, and MLB outcome labels are now assembled for the provisional 2011–2018 cohort. Combining those rows with the 2019 pilot produced 1,401 modeling rows for 2011–2019, with 375 `made_mlb_ever` positives. The four zero-PA college seasons have blank rate statistics such as OPS. BB and SO counts were corrected after identifying that TBC percentage headers had overwritten the count fields.
 
 The 2019 competition feature is `team_SOS`, the numeric end-of-season Division I strength-of-schedule value from WarrenNolan.com. The source excludes games against the team in question when computing opponents' records. Since the season-end value can include games after the MLB Draft, treat it as retrospective; use a pre-draft snapshot for a draft-day prediction.
 
@@ -77,25 +77,19 @@ The refreshed 2019 pilot produced several early observations under the current `
 - This does not prove that college statistics are unhelpful. The current sample contains only one draft class and does not yet include age, conference strength, strength of schedule, or more advanced position-specific statistics.
 - The 2019 results are exploratory and should not be treated as a final predictive model.
 
+## 2011–2019 Multi-Year Results
+
+The combined provisional table contains 1,401 players and 375 positive outcomes (26.8%). In the pooled cross-validated baseline comparison, the model using college PA, OPS, BB rate, K rate, HR rate, age, and SOS without draft position or position reached ROC-AUC 0.7059, average precision 0.4829, Brier score 0.1742, and log loss 0.5268. The constant-probability baseline Brier score was 0.1960.
+
+The primary value-screening models exclude both `overall_pick` and `draft_round` as predictors. Draft pick is used only after prediction to identify later picks for evaluation. Among the later half of picks within each year, the college-stats, age, and SOS model without position placed 15 MLB players in its top 10% (15/71; 21.1%), compared with a 12.4% MLB rate across that later-pick group (87/703). Adding position reduced the top-decile MLB rate to 16.9%. Tuning college-stat emphasis did not consistently improve performance, and selected weights varied across folds.
+
+These results show preliminary predictive signal, not a final or future-year-validated value model. The cohort and outcomes remain subject to the limitations below.
+
 ## Modeling Strategy
 
-The modeling process will compare:
+The primary goal is to find promising players without using draft position as a predictor. Primary model inputs are final-season college statistics, age at draft, team SOS, and optionally position. Draft pick and round may be used after predictions to evaluate how well the model identifies successful later picks, but they are excluded from those models' predictor inputs.
 
-1. Draft-pick-only models
-2. College-statistics-only models
-3. Draft pick plus position models
-4. Combined draft, college, age, and competition models
-
-Evaluation will use:
-
-- ROC-AUC
-- Average precision
-- Brier score
-- Log loss
-- Calibration tables
-- Leave-one-draft-year-out validation
-
-The final model should be evaluated on draft classes that were not used during training.
+Draft-position-only and draft-aware models are retained as reference baselines. The model comparisons use logistic regression and report ROC-AUC, average precision, Brier score, log loss, calibration, and later-pick ranking measures. College-stat emphasis is tested through cross-validation rather than assigned as a fixed scouting weight. Random cross-validation mixes draft years; a future-year holdout is needed to assess performance on unseen draft classes.
 
 ## Project Workflow
 
@@ -108,7 +102,7 @@ The final model should be evaluated on draft classes that were not used during t
 7. Explore relationships between features and outcomes
 8. Build baseline models
 9. Compare model performance
-10. Complete roster review and add final-season features and outcomes for draft years 2018–2011
+10. Resolve remaining cohort and draft-day position reviews, then finalize the 2011–2018 features and outcome labels
 11. Perform cross-year validation
 12. Create a final probability model
 
@@ -148,13 +142,13 @@ python src/inspect_baseline_predictions_2019.py
 
 ## Important Limitations
 
-- The current pilot contains only one draft class.
-- The number of successful MLB outcomes is relatively small.
-- Draft position contains information from scouting departments and professional organizations.
+- The 2011–2019 cohort is provisional: 970 school/player review records remain outside the current modeling table, and draft-day positions still need verification.
+- Pooled random cross-validation mixes draft years. It does not measure how well a model predicts a future draft class; use year-based holdouts for that question.
+- `made_mlb_ever` has different follow-up lengths by draft year, especially for recent classes.
 - College statistics are affected by playing time, competition, conference, park, age, and team context.
 - One MLB plate appearance is a low threshold and does not measure sustained service time, production, or career value.
 - Players with small college samples may create unstable observations.
-- A model trained on one draft class may not generalize to other years.
+- Draft position contains substantial information from scouting departments and professional organizations. The primary value models omit it as an input by design.
 
 ## Progress Log
 
@@ -178,7 +172,17 @@ python src/inspect_baseline_predictions_2019.py
 - Confirmed the primary outcome as `made_mlb_ever`: at least one MLB regular-season plate appearance by the outcome check date, rather than a five-year debut window.
 - Refreshed the 2019 modeling run: 185 players, 59 positive outcomes, 126 negative outcomes, and no missing core labels; reran model comparisons.
 - Collected 4,817 MLB draft candidates from the first 20 rounds of the 2011–2018 drafts.
-- Collected 2,394 annual team SOS records and added school-name aliases for matching candidates to the year-specific D1 SOS tables.
-- Current screening matches 1,220 non-pitcher API-position candidates to a D1 SOS record; 972 school/player records remain for review. This is not yet the final D1 position-player cohort.
-- Added a warning that MLB Stats API position may differ from the player's draft-day position; verify it before final cohort selection.
+- Collected 2,394 annual team SOS records and added school-name aliases for matching candidates to year-specific D1 SOS tables.
+- At that checkpoint, screening matched 1,220 non-pitcher API-position candidates to D1 SOS records and left 972 school/player records for review. Later review and cohort corrections changed these counts.
+- Added a warning that MLB Stats API position may differ from draft-day position; verify it before final cohort selection.
 - Pushed the project checkpoint to GitHub (`6faba1d`).
+
+### 2026-10-30 — Built the 2011–2019 table and tested no-draft value models
+
+- Corrected the historical college-stat import so TBC `bb` and `so` counts are distinct from the `bb%` and `so%` rate columns.
+- Built the provisional 2011–2018 modeling table with 1,216 players, then combined it with 185 players from 2019 for 1,401 rows and 375 `made_mlb_ever` outcomes.
+- Validated unique draft-year/pick keys, no pitcher rows, and four zero-PA seasons with missing OPS.
+- Ran pooled baseline comparisons across all nine draft years. The no-draft-position college-stats, age, and SOS model had ROC-AUC 0.7059, average precision 0.4829, and Brier score 0.1742.
+- Tested no-draft-position value models with and without position, and compared college-stat emphasis levels using nested cross-validation.
+- Among the later half of picks within each year, the no-position equal-weight model's top 10% contained 15 MLB players among 71 candidates (21.1%), compared with 87 among all 703 later-half candidates (12.4%). Adding position lowered the top-decile rate to 16.9%. Weight tuning did not consistently improve results.
+- The school-match review still contains 970 records outside the provisional cohort. Cross-validation randomly mixes draft years and does not measure future-year performance.

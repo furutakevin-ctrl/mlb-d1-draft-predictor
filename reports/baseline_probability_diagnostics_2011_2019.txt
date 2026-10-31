@@ -1,0 +1,73 @@
+2011-2019 BASELINE PROBABILITY DIAGNOSTICS
+============================================
+
+DRAFT_PICK_ONLY
+--------------------------------------------
+ probability_quintile  players average_predicted_probability actual_mlb_rate
+                    1      281                          5.8%            9.3%
+                    2      280                         12.5%           15.4%
+                    3      280                         22.9%           14.3%
+                    4      280                         36.5%           32.1%
+                    5      280                         56.3%           62.9%
+
+DRAFT_PICK_PLUS_POSITION
+--------------------------------------------
+ probability_quintile  players average_predicted_probability actual_mlb_rate
+                    1      281                          5.7%            9.3%
+                    2      280                         12.5%           15.0%
+                    3      280                         22.8%           16.4%
+                    4      280                         36.6%           30.0%
+                    5      280                         56.4%           63.2%
+
+DRAFT_PICK_PLUS_COLLEGE
+--------------------------------------------
+ probability_quintile  players average_predicted_probability actual_mlb_rate
+                    1      281                          5.3%           10.0%
+                    2      280                         11.9%           13.9%
+                    3      280                         22.5%           15.4%
+                    4      280                         37.1%           30.7%
+                    5      280                         57.3%           63.9%
+
+
+DRAFT-PICK MODEL CALIBRATION BY YEAR
+--------------------------------------------
+ draft_year  players  positive_outcomes average_predicted_probability actual_mlb_rate
+       2011      126                 36                         25.5%           28.6%
+       2012      141                 36                         24.4%           25.5%
+       2013      150                 39                         24.4%           26.0%
+       2014      145                 28                         24.6%           19.3%
+       2015      167                 44                         26.8%           26.3%
+       2016      167                 46                         27.7%           27.5%
+       2017      154                 41                         26.9%           26.6%
+       2018      166                 46                         28.4%           27.7%
+       2019      185                 59                         30.7%           31.9%
+
+
+HIGHEST DRAFT-PICK MODEL PROBABILITIES
+--------------------------------------------
+ draft_year       player_name  overall_pick position_family  made_mlb_ever draft_pick_only
+       2013       Kris Bryant             2              DH              1           68.6%
+       2015      Alex Bregman             2              IF              1           68.4%
+       2019     Andrew Vaughn             3              IF              1           68.3%
+       2013       Colin Moran             6              IF              1           68.1%
+       2017       Pavin Smith             7              IF              1           67.9%
+       2013     Hunter Dozier             8              IF              1           67.8%
+       2015 Andrew Benintendi             7              DH              1           67.7%
+       2017      Adam Haseley             8              OF              1           67.5%
+       2014  Michael Conforto            10              DH              1           67.5%
+       2015    Dansby Swanson             1              IF              1           67.3%
+
+
+LOWEST DRAFT-PICK MODEL PROBABILITIES
+--------------------------------------------
+ draft_year      player_name  overall_pick position_family  made_mlb_ever draft_pick_only
+       2012      Eric Garcia           629              IF              0            3.2%
+       2011      Peter Lavin           631              OF              0            3.2%
+       2011    Martin Medina           621               C              0            3.4%
+       2012      Jacob House           633              IF              0            3.4%
+       2016 Stefan Trosclair           616              IF              0            3.4%
+       2011       Matt Duffy           610              IF              1            3.7%
+       2017    Dyla Burdeaux           605              IF              0            3.7%
+       2012   Mikey Reynolds           637              IF              0            3.7%
+       2012    Michael Garza           635              IF              0            3.8%
+       2019      Jake Snider           604              OF              0            3.8%
